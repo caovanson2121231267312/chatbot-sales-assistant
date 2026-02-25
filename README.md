@@ -149,6 +149,25 @@ rasa run --enable-api --cors "*" --credentials credentials.yml
 
 ## 💬 Ví dụ câu hỏi
 
+### Demo Giao diện Chat
+
+| Chức năng | Ảnh minh họa |
+|-----------|--------------|
+| Chào hỏi | ![Greeting](./demo/01_greeting.png) |
+| Tìm kiếm sản phẩm | ![Product Search](./demo/02_product_search.png) |
+| Kiểm tra giá | ![Product Price](./demo/03_product_price.png) |
+| Tồn kho | ![Availability](./demo/04_product_availability.png) |
+| Khuyến mãi | ![Promotion](./demo/05_promotion.png) |
+| Trạng thái đơn hàng | ![Order Status](./demo/06_order_status.png) |
+| Theo dõi vận chuyển | ![Order Track](./demo/07_order_track.png) |
+| Vận chuyển | ![Shipping](./demo/08_shipping.png) |
+| Thanh toán | ![Payment](./demo/09_payment.png) |
+| Chính sách | ![Policies](./demo/10_policies.png) |
+
+Xem thêm nhiều kịch bản chat tại: [CHAT_DEMO.md](./CHAT_DEMO.md)
+
+---
+
 ### Tìm kiếm sản phẩm
 ```
 - Tìm điện thoại iPhone
@@ -376,5 +395,3 @@ Chatbot E-commerce - Phiên bản 1.0.0
 ---
 
 **Chúc bạn triển khai thành công! 🎉**
-#   c h a t b o t - s a l e s - a s s i s t a n t  
- 

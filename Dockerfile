@@ -11,7 +11,10 @@ RUN pip install --upgrade pip && \
 
 WORKDIR /app
 
+# Copy all project files
 COPY actions/ /app/actions/
 COPY database/ /app/database/
+COPY alembic.ini /app/alembic.ini
 
+# Default command starts the action server
 CMD ["start", "--debug", "--port", "5055", "--actions", "actions"]

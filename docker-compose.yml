@@ -29,6 +29,7 @@ services:
     volumes:
       - ./actions:/app/actions
       - ./database:/app/database
+      - ./alembic.ini:/app/alembic.ini
     extra_hosts:
       # Cho phép container gọi MySQL trên máy host (Windows/Mac)
       - "host.docker.internal:host-gateway"
