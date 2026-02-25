@@ -1,0 +1,145 @@
+version: "3.1"
+
+nlu:
+- intent: account_info
+  examples: |
+    - tài khoản của tôi
+    - thông tin cá nhân
+    - xem thông tin tài khoản
+    - account
+    - profile
+    - thông tin của tôi
+    - tài khoản
+    - xem tài khoản
+    - thông tin account
+    - profile của tôi
+    - xem profile
+    - tài khoản cá nhân
+    - thông tin đăng ký
+    - xem thông tin đăng ký
+    - thông tin thành viên
+    - membership
+    - tài khoản thành viên
+    - xem chi tiết tài khoản
+    - cập nhật thông tin
+    - sửa thông tin tài khoản
+    - đổi thông tin cá nhân
+    - thay đổi thông tin
+    - cập nhật profile
+    - đổi mật khẩu
+    - thay đổi email
+    - cập nhật số điện thoại
+    - đổi địa chỉ
+
+- intent: loyalty_points
+  examples: |
+    - điểm tích lũy
+    - tôi có bao nhiêu điểm
+    - kiểm tra điểm
+    - xem điểm
+    - points
+    - điểm thưởng
+    - số điểm của tôi
+    - điểm tích lũy của tôi
+    - xem điểm tích lũy
+    - kiểm tra điểm thưởng
+    - có bao nhiêu điểm
+    - điểm hiện tại
+    - số điểm hiện có
+    - loyalty points
+    - reward points
+    - điểm đổi quà
+    - quy đổi điểm
+    - đổi điểm
+    - dùng điểm
+    - sử dụng điểm
+    - tích điểm thế nào
+    - làm sao để có điểm
+    - cách tích điểm
+    - quy tắc tích điểm
+    - chính sách tích điểm
+    - điểm có hết hạn không
+    - điểm dùng được gì
+    - đổi điểm lấy gì
+    - thành viên
+    - member tier
+    - hạng thành viên
+    - silver gold diamond
+    - bạc vàng kim cương
+    - loyalty
+    - trung thành
+    - reward
+    - thưởng
+    - điểm
+    - my points
+    - điểm của tôi
+    - point balance
+    - số dư điểm
+    - current points
+    - earn points
+    - tích điểm
+    - earn rate
+    - tỷ lệ tích
+    - redeem points
+    - use points
+    - point value
+    - giá trị điểm
+    - point expiry
+    - điểm hết hạn
+    - expiring soon
+    - sắp hết hạn
+    - point history
+    - lịch sử điểm
+    - point transaction
+    - giao dịch điểm
+    - how to earn
+    - tích thế nào
+    - earn more points
+    - tích thêm điểm
+    - double points
+    - điểm x2
+    - bonus points
+    - welcome points
+    - điểm chào mừng
+    - referral points
+    - điểm giới thiệu
+    - review points
+    - điểm đánh giá
+    - birthday points
+    - điểm sinh nhật
+    - tier benefits
+    - quyền lợi hạng
+    - member benefits
+    - quyền lợi thành viên
+    - vip benefits
+    - quyền lợi vip
+    - upgrade tier
+    - nâng hạng
+    - next tier
+    - hạng tiếp theo
+    - points to next tier
+    - điểm để lên hạng
+    - redeem for discount
+    - đổi lấy giảm giá
+    - redeem for voucher
+    - đổi lấy voucher
+    - redeem for product
+    - đổi lấy sản phẩm
+    - point catalog
+    - catalog đổi điểm
+    - reward catalog
+    - quà đổi điểm
+    - minimum redeem
+    - tối thiểu đổi
+    - check balance
+    - kiểm tra số dư
+    - balance
+    - số dư
+    - total points
+    - tổng điểm
+    - available points
+    - điểm khả dụng
+    - pending points
+    - điểm chờ
+    - expired points
+    - điểm đã hết hạn

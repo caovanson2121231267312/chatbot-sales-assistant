@@ -1,0 +1,33 @@
+version: "3.1"
+
+rules:
+
+- rule: Chào hỏi
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+- rule: Tạm biệt
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Cảm ơn
+  steps:
+  - intent: thanks
+  - action: utter_thanks
+
+- rule: Bot challenge
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+
+- rule: Xác nhận
+  steps:
+  - intent: affirm
+  - action: utter_affirm
+
+- rule: Từ chối
+  steps:
+  - intent: deny
+  - action: utter_deny

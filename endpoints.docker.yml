@@ -1,0 +1,3 @@
+# Dùng khi chạy bằng Docker Compose (action server là service tên "action_server")
+action_endpoint:
+  url: "http://action_server:5055/webhook"

@@ -1,0 +1,141 @@
+version: "3.1"
+
+stories:
+
+- story: Kiểm tra đơn hàng đầy đủ
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: order_status
+    entities:
+    - order_number: "DH123456"
+  - action: action_check_order_status
+  - intent: order_track
+  - action: action_track_order
+  - intent: thanks
+  - action: utter_thanks
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: Hủy đơn hàng
+  steps:
+  - intent: order_status
+    entities:
+    - order_number: "DH123456"
+  - action: action_check_order_status
+  - intent: order_cancel
+  - action: action_cancel_order
+  - intent: affirm
+  - action: utter_affirm
+  - intent: thanks
+  - action: utter_thanks
+
+- story: Trả hàng và hoàn tiền
+  steps:
+  - intent: order_status
+  - action: action_check_order_status
+  - intent: order_return
+  - action: action_return_order
+  - intent: return_policy
+  - action: utter_return_policy
+  - intent: affirm
+  - action: utter_affirm
+
+- story: Theo dõi vận chuyển chi tiết
+  steps:
+  - intent: order_track
+  - action: action_track_order
+  - intent: shipping_info
+  - action: utter_shipping_info
+  - intent: order_status
+  - action: action_check_order_status
+
+- story: Khách hàng không hài lòng với đơn hàng
+  steps:
+  - intent: order_status
+  - action: action_check_order_status
+  - intent: deny
+  - action: utter_deny
+  - intent: order_return
+  - action: action_return_order
+  - intent: return_policy
+  - action: utter_return_policy
+
+- story: Kiểm tra nhiều đơn hàng
+  steps:
+  - intent: order_status
+    entities:
+    - order_number: "DH123456"
+  - action: action_check_order_status
+  - intent: order_status
+    entities:
+    - order_number: "DH789012"
+  - action: action_check_order_status
+  - intent: thanks
+  - action: utter_thanks
+
+- story: Hỏi về giao hàng
+  steps:
+  - intent: shipping_info
+  - action: utter_shipping_info
+  - intent: shipping_fee
+  - action: utter_shipping_fee
+  - intent: order_track
+  - action: action_track_order
+
+- story: Đổi ý muốn hủy đơn
+  steps:
+  - intent: order_cancel
+  - action: action_cancel_order
+  - intent: deny
+  - action: utter_deny
+  - intent: order_status
+  - action: action_check_order_status
+
+- story: Kiểm tra đơn rồi hỏi ship
+  steps:
+  - intent: order_status
+    entities:
+    - order_number: "DH123456"
+  - action: action_check_order_status
+  - intent: order_track
+  - action: action_track_order
+  - intent: shipping_info
+  - action: utter_shipping_info
+  - intent: thanks
+  - action: utter_thanks
+
+- story: Hỏi đổi trả rồi xem chính sách
+  steps:
+  - intent: order_return
+  - action: action_return_order
+  - intent: return_policy
+  - action: utter_return_policy
+  - intent: affirm
+  - action: utter_affirm
+  - intent: thanks
+  - action: utter_thanks
+
+- story: Hủy đơn rồi cảm ơn
+  steps:
+  - intent: order_cancel
+    entities:
+    - order_number: "DH123456"
+  - action: action_cancel_order
+  - intent: thanks
+  - action: utter_thanks
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: Nhiều đơn rồi theo dõi
+  steps:
+  - intent: order_status
+  - action: action_check_order_status
+  - intent: order_status
+    entities:
+    - order_number: "DH789012"
+  - action: action_check_order_status
+  - intent: order_track
+  - action: action_track_order
+  - intent: thanks
+  - action: utter_thanks

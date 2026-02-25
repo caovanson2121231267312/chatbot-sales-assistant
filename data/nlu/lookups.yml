@@ -1,0 +1,701 @@
+version: "3.1"
+
+nlu:
+- lookup: product_name
+  examples: |
+    - iphone
+    - iphone 15
+    - iphone 15 pro
+    - iphone 15 pro max
+    - iphone 14
+    - iphone 13
+    - samsung
+    - samsung galaxy
+    - samsung s24
+    - samsung s24 ultra
+    - samsung s23
+    - macbook
+    - macbook air
+    - macbook pro
+    - macbook pro m3
+    - macbook pro m2
+    - dell
+    - dell xps
+    - dell xps 15
+    - dell inspiron
+    - airpods
+    - airpods pro
+    - airpods pro 2
+    - airpods max
+    - ipad
+    - ipad pro
+    - ipad air
+    - ipad mini
+    - apple watch
+    - apple watch series 9
+    - apple watch ultra
+    - galaxy watch
+    - xiaomi
+    - oppo
+    - vivo
+    - realme
+    - asus
+    - lenovo
+    - hp
+    - acer
+    - msi
+    - iphone 14 pro
+    - iphone 14 pro max
+    - samsung galaxy s23 ultra
+    - samsung galaxy a54
+    - macbook air m2
+    - dell xps 13
+    - surface laptop
+    - google pixel 8
+    - xiaomi 14
+    - oppo find
+    - oneplus 12
+    - airpods 3
+    - galaxy buds pro
+    - sony wh-1000xm5
+    - ipad 10
+    - galaxy tab s9
+    - apple watch se
+    - galaxy watch 6
+    - logitech mx
+    - razer
+    - anker
+    - baseus
+    - ugreen
+
+- lookup: product_type
+  examples: |
+    - điện thoại
+    - điện thoại thông minh
+    - smartphone
+    - laptop
+    - máy tính xách tay
+    - notebook
+    - tablet
+    - máy tính bảng
+    - tai nghe
+    - tai nghe bluetooth
+    - tai nghe không dây
+    - headphone
+    - earphone
+    - đồng hồ
+    - đồng hồ thông minh
+    - smartwatch
+    - phụ kiện
+    - ốp lưng
+    - bao da
+    - kính cường lực
+    - dán màn hình
+    - sạc
+    - sạc dự phòng
+    - pin dự phòng
+    - powerbank
+    - cáp sạc
+    - dây sạc
+    - chuột
+    - chuột không dây
+    - bàn phím
+    - keyboard
+    - màn hình
+    - monitor
+    - loa
+    - speaker
+    - camera
+    - webcam
+    - mỹ phẩm
+    - son
+    - son môi
+    - kem dưỡng
+    - kem dưỡng da
+    - serum
+    - sữa rửa mặt
+    - toner
+    - mặt nạ
+    - phấn
+    - kem nền
+    - kem chống nắng
+    - trang điểm
+    - dưỡng da
+    - chăm sóc da
+    - dầu gội
+    - sữa tắm
+    - nước hoa
+    - dầu xả
+    - sữa dưỡng thể
+    - xà phòng
+    - tạp hóa
+    - thực phẩm
+    - đồ khô
+    - bánh kẹo
+    - nước uống
+    - sữa
+    - đồ gia dụng
+    - gia vị
+    - mì gói
+    - đồ đông lạnh
+    - rau củ
+    - trái cây
+    - thịt cá
+    - hải sản
+    - bột giặt
+    - nước xả vải
+    - nước rửa chén
+    - khăn giấy
+    - giấy vệ sinh
+    - cà phê
+    - trà
+    - snack
+    - bánh ngọt
+    - socola
+    - đồ hộp
+    - nước mắm
+    - dầu ăn
+    - bột nêm
+    - vitamin
+    - thực phẩm chức năng
+    - quần áo
+    - thời trang
+    - giày dép
+    - túi xách
+    - váy
+    - áo thun
+    - áo khoác
+    - quần jean
+    - đầm
+    - áo sơ mi
+    - quần short
+    - đồ lót
+    - vớ
+    - khăn choàng
+    - mắt kính
+    - ví
+    - thắt lưng
+    - trang sức
+    - vòng tay
+    - dây chuyền
+    - đồ trẻ em
+    - sữa bột
+    - bỉm tã
+    - đồ chơi
+    - sách vở
+    - văn phòng phẩm
+    - balo
+    - vali
+    - nội thất
+    - bàn ghế
+    - đèn
+    - chăn ga gối
+    - rèm cửa
+    - đồ trang trí
+    - cây cảnh
+    - đồ nhà bếp
+    - nồi cơm điện
+    - máy xay
+    - lò vi sóng
+    - tủ lạnh
+    - máy giặt
+    - quạt
+    - điều hòa
+    - máy lọc nước
+    - đồ thể thao
+    - áo thể thao
+    - giày chạy bộ
+    - đồ bơi
+
+- lookup: brand
+  examples: |
+    - apple
+    - samsung
+    - xiaomi
+    - oppo
+    - vivo
+    - realme
+    - nokia
+    - sony
+    - dell
+    - hp
+    - asus
+    - lenovo
+    - acer
+    - msi
+    - lg
+    - huawei
+    - oneplus
+    - google
+    - microsoft
+    - razer
+    - alienware
+    - laneige
+    - innisfree
+    - the face shop
+    - etude house
+    - 3ce
+    - mac cosmetics
+    - maybelline
+    - loreal
+    - neutrogena
+    - cetaphil
+    - la roche posay
+    - cerave
+    - kiehl
+    - clinique
+    - estee lauder
+    - shiseido
+    - sk ii
+    - sulwhasoo
+    - cosrx
+    - some by mi
+    - anessa
+    - biore
+    - dove
+    - pantene
+    - head and shoulders
+    - clear
+    - sunsilk
+    - comfort
+    - omo
+    - tide
+    - downy
+    - lifebuoy
+    - colgate
+    - pepsodent
+    - cocacola
+    - pepsi
+    - lavie
+    - aquafina
+    - vinamilk
+    - dutch lady
+    - nestle
+    - acecook
+    - kokomi
+    - masan
+    - ajinomoto
+    - knorr
+    - maggi
+    - chinsu
+    - nam ngư
+    - simply
+    - nutifood
+    - th true milk
+    - coca cola
+    - starbucks
+    - highlands
+    - trung nguyen
+    - nike
+    - adidas
+    - puma
+    - converse
+    - vans
+    - zara
+    - h&m
+    - uniqlo
+    - mango
+    - bershka
+    - pull and bear
+    - guess
+    - levi
+    - calvin klein
+    - tommy
+    - lacoste
+    - the north face
+    - champion
+    - fila
+    - kappa
+    - lining
+    - bitis
+    - juno
+    - canifa
+    - ninomaxx
+    - elise
+    - ivy moda
+    - owen
+    - việt tiến
+    - may 10
+    - biti's
+    - annam
+    - ananas
+    - harper
+    - coolmate
+    - yame
+    - lemongrass
+    - cocoon
+    - jolen
+    - sunhouse
+    - lock and lock
+    - tupperware
+    - bluestone
+    - kangaroo
+    - daikin
+    - panasonic
+    - lg
+    - samsung
+    - toshiba
+    - electrolux
+    - sharp
+    - sunhouse
+    - lock&lock
+    - elmich
+    - happy cook
+    - tefal
+    - philips
+    - braun
+    - locknlock
+    - huggies
+    - pampers
+    - goon
+    - merries
+    - moony
+    - bobby
+    - farlin
+    - hipp
+    - friso
+    - abbott
+    - meiji
+    - wakodo
+    - enfamil
+    - similac
+    - ensure
+    - pediasure
+    - ensure gold
+    - glucerna
+    - colgate
+    - pepsodent
+    - sensodyne
+    - oral b
+    - listerine
+
+- lookup: color
+  examples: |
+    - đen
+    - trắng
+    - xanh
+    - đỏ
+    - vàng
+    - hồng
+    - tím
+    - xám
+    - bạc
+    - vàng gold
+    - xanh dương
+    - xanh lá
+    - xanh navy
+    - xanh mint
+    - cam
+    - nâu
+    - be
+    - titan
+    - midnight
+    - starlight
+
+- lookup: storage
+  examples: |
+    - 64gb
+    - 128gb
+    - 256gb
+    - 512gb
+    - 1tb
+    - 2tb
+    - bản 64gb
+    - bản 128gb
+    - bản 256gb
+    - bản 512gb
+    - bản 1tb
+    - dung lượng 64gb
+    - dung lượng 128gb
+    - dung lượng 256gb
+    - dung lượng 512gb
+    - dung lượng 1tb
+
+- synonym: điện thoại
+  examples: |
+    - phone
+    - smartphone
+    - di động
+    - mobile
+    - dt
+    - đt
+
+- synonym: laptop
+  examples: |
+    - máy tính xách tay
+    - notebook
+    - máy tính
+    - lt
+    - lap
+
+- synonym: tai nghe
+  examples: |
+    - headphone
+    - earphone
+    - tai phone
+    - tai nghe bluetooth
+    - tai nghe không dây
+
+- synonym: đồng hồ
+  examples: |
+    - watch
+    - smartwatch
+    - đồng hồ thông minh
+    - đh
+
+- synonym: có
+  examples: |
+    - yes
+    - ok
+    - oke
+    - okie
+    - được
+    - ừ
+    - uhm
+
+- synonym: không
+  examples: |
+    - no
+    - ko
+    - k
+    - hông
+    - hong
+
+- synonym: cảm ơn
+  examples: |
+    - thanks
+    - thank you
+    - cám ơn
+    - cam on
+    - tks
+    - ty
+
+- synonym: xin chào
+  examples: |
+    - hello
+    - hi
+    - chào
+    - alo
+    - hế nhô
+    - hê lô
+
+- synonym: tạm biệt
+  examples: |
+    - bye
+    - goodbye
+    - see you
+    - bb
+    - bái bai
+
+- synonym: iphone
+  examples: |
+    - ip
+    - iphone
+    - điện thoại iphone
+    - dt iphone
+    - apple iphone
+
+- synonym: samsung
+  examples: |
+    - ss
+    - samsung galaxy
+    - điện thoại samsung
+    - dt samsung
+
+- synonym: macbook
+  examples: |
+    - mb
+    - mac
+    - laptop macbook
+    - laptop mac
+    - apple macbook
+
+- synonym: đơn hàng
+  examples: |
+    - order
+    - đơn
+    - order hàng
+    - purchase
+    - mua hàng
+
+- synonym: mã đơn
+  examples: |
+    - order number
+    - order id
+    - order code
+    - mã order
+    - số đơn
+
+- synonym: giảm giá
+  examples: |
+    - discount
+    - sale
+    - khuyến mãi
+    - promotion
+    - ưu đãi
+    - deal
+
+- synonym: giao hàng
+  examples: |
+    - delivery
+    - ship
+    - shipping
+    - vận chuyển
+    - giao
+    - ship hàng
+
+- synonym: thanh toán
+  examples: |
+    - payment
+    - pay
+    - trả tiền
+    - pay money
+    - checkout
+
+- synonym: bảo hành
+  examples: |
+    - warranty
+    - guarantee
+    - bh
+    - bảo đảm
+
+- synonym: đổi trả
+  examples: |
+    - return
+    - refund
+    - exchange
+    - hoàn tiền
+    - trả hàng
+    - đổi hàng
+
+- synonym: tài khoản
+  examples: |
+    - account
+    - profile
+    - user
+    - member
+    - thành viên
+
+- synonym: điểm
+  examples: |
+    - points
+    - loyalty points
+    - reward points
+    - tích điểm
+    - điểm thưởng
+
+- synonym: sản phẩm
+  examples: |
+    - product
+    - item
+    - hàng
+    - sp
+    - mặt hàng
+
+- synonym: giá
+  examples: |
+    - price
+    - cost
+    - giá cả
+    - giá tiền
+    - bao nhiêu
+
+- synonym: còn hàng
+  examples: |
+    - in stock
+    - available
+    - có sẵn
+    - stock
+    - tồn kho
+
+- synonym: hết hàng
+  examples: |
+    - out of stock
+    - sold out
+    - không còn
+    - het hang
+    - hết
+
+- synonym: hotline
+  examples: |
+    - số điện thoại
+    - phone
+    - sdt
+    - liên hệ
+    - contact
+
+- synonym: địa chỉ
+  examples: |
+    - address
+    - location
+    - cửa hàng
+    - store
+    - chi nhánh
+
+- synonym: mỹ phẩm
+  examples: |
+    - cosmetics
+    - makeup
+    - trang điểm
+    - dưỡng da
+    - skincare
+    - làm đẹp
+
+- synonym: son
+  examples: |
+    - son môi
+    - lipstick
+    - lip
+    - son
+    - lip color
+
+- synonym: kem dưỡng
+  examples: |
+    - moisturizer
+    - cream
+    - kem
+    - lotion
+    - dưỡng ẩm
+
+- synonym: tạp hóa
+  examples: |
+    - grocery
+    - groceries
+    - đồ tạp hóa
+    - siêu thị
+    - supermarket
+    - đồ dùng hàng ngày
+
+- synonym: thực phẩm
+  examples: |
+    - food
+    - đồ ăn
+    - thức ăn
+    - foodstuff
+    - đồ khô
+
+- synonym: quần áo
+  examples: |
+    - clothes
+    - clothing
+    - thời trang
+    - fashion
+    - đồ mặc
+    - trang phục
+
+- synonym: giày
+  examples: |
+    - shoes
+    - giày dép
+    - footwear
+    - dép
+    - sandal
+
+- synonym: túi xách
+  examples: |
+    - bag
+    - handbag
+    - túi
+    - purse
+    - backpack
+    - balo

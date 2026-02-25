@@ -1,0 +1,329 @@
+version: "3.1"
+
+nlu:
+- intent: ask_store_location
+  examples: |
+    - cửa hàng ở đâu
+    - địa chỉ cửa hàng là gì
+    - shop ở đâu vậy
+    - showroom ở đâu
+    - có cửa hàng không
+    - có showroom không
+    - có thể đến xem trực tiếp không
+    - đến xem hàng trực tiếp ở đâu
+    - có thể đến cửa hàng không
+    - cửa hàng ở thành phố nào
+    - có chi nhánh ở Hà Nội không
+    - có chi nhánh ở HCM không
+    - có chi nhánh ở Đà Nẵng không
+    - có chi nhánh ở Hải Phòng không
+    - có chi nhánh ở Cần Thơ không
+    - có chi nhánh ở tỉnh tôi không
+    - chi nhánh gần nhất ở đâu
+    - cửa hàng gần tôi nhất ở đâu
+    - store gần nhất ở đâu
+    - nearest store ở đâu
+    - có bao nhiêu chi nhánh
+    - có bao nhiêu cửa hàng
+    - danh sách chi nhánh
+    - list cửa hàng
+    - địa chỉ chi nhánh Hà Nội
+    - địa chỉ chi nhánh HCM
+    - địa chỉ chi nhánh Đà Nẵng
+    - cửa hàng mở cửa mấy giờ
+    - giờ mở cửa là mấy giờ
+    - cửa hàng đóng cửa mấy giờ
+    - giờ làm việc là mấy giờ
+    - cửa hàng mở cửa thứ mấy
+    - cửa hàng có mở cuối tuần không
+    - cửa hàng có mở chủ nhật không
+    - cửa hàng có mở ngày lễ không
+    - có thể đến thử hàng không
+    - có thể đến test sản phẩm không
+    - có thể đến xem mẫu không
+    - có phòng trưng bày không
+    - có thể đặt lịch đến xem không
+    - cần đặt hẹn trước không
+    - walk-in được không
+    - đến thẳng được không
+    - có bãi đỗ xe không
+    - có chỗ đậu xe không
+    - gần đây có cửa hàng không
+    - tìm cửa hàng gần tôi
+    - find store near me
+    - store locator
+    - tìm chi nhánh gần nhất
+    - địa chỉ shop
+    - shop ở quận nào
+    - shop ở đường nào
+    - shop ở tòa nhà nào
+
+- intent: ask_contact_support
+  examples: |
+    - hotline bao nhiêu
+    - số điện thoại shop là gì
+    - số điện thoại liên hệ
+    - cho tôi số điện thoại
+    - số hotline là gì
+    - gọi điện cho shop số nào
+    - số điện thoại tư vấn
+    - số điện thoại hỗ trợ
+    - số điện thoại chăm sóc khách hàng
+    - số điện thoại CSKH
+    - email shop là gì
+    - email liên hệ
+    - email hỗ trợ
+    - email CSKH
+    - địa chỉ email
+    - zalo shop là gì
+    - zalo liên hệ
+    - zalo hỗ trợ
+    - số zalo shop
+    - zalo CSKH
+    - facebook shop là gì
+    - fanpage facebook
+    - facebook page
+    - link facebook
+    - instagram shop
+    - tiktok shop
+    - youtube shop
+    - website shop
+    - link website
+    - địa chỉ website
+    - muốn nói chuyện với người thật
+    - muốn gặp nhân viên thật
+    - muốn chat với người thật
+    - không muốn chat với bot
+    - chuyển cho nhân viên được không
+    - kết nối với nhân viên
+    - transfer to agent
+    - speak to human
+    - talk to real person
+    - connect to staff
+    - có nhân viên hỗ trợ không
+    - nhân viên online không
+    - có ai hỗ trợ không
+    - cần hỗ trợ trực tiếp
+    - cần tư vấn trực tiếp
+    - cần gặp nhân viên
+    - liên hệ bộ phận nào
+    - liên hệ ai
+    - liên hệ thế nào
+    - cách liên hệ shop
+    - contact shop thế nào
+    - how to contact
+    - cách liên lạc
+    - kênh liên hệ
+    - support channel
+    - có live chat không
+    - có chat trực tiếp không
+    - có video call không
+    - có gọi điện tư vấn không
+    - tư vấn qua điện thoại được không
+    - hỗ trợ 24/7 không
+    - hỗ trợ mấy giờ
+    - giờ hỗ trợ là mấy giờ
+    - ngoài giờ hành chính có hỗ trợ không
+
+- intent: complaint
+  examples: |
+    - tôi muốn khiếu nại
+    - tôi muốn phàn nàn
+    - tôi không hài lòng
+    - tôi thất vọng
+    - dịch vụ tệ quá
+    - sản phẩm tệ quá
+    - chất lượng kém quá
+    - không như quảng cáo
+    - bị lừa rồi
+    - hàng giả rồi
+    - hàng nhái rồi
+    - hàng fake rồi
+    - nhận được hàng lỗi
+    - hàng bị hỏng khi nhận
+    - hàng bị vỡ khi nhận
+    - hàng bị trầy xước khi nhận
+    - hàng bị móp méo khi nhận
+    - hàng bị ướt khi nhận
+    - đóng gói kém quá
+    - đóng gói không cẩn thận
+    - giao hàng chậm quá
+    - giao hàng trễ quá
+    - đã quá hạn giao hàng
+    - chờ mãi không thấy hàng
+    - hàng chưa đến mà đã đánh dấu giao rồi
+    - shipper không giao mà báo giao rồi
+    - shipper thái độ tệ
+    - shipper không lịch sự
+    - nhân viên thái độ tệ
+    - nhân viên không nhiệt tình
+    - tư vấn sai thông tin
+    - bị tư vấn sai
+    - thông tin sản phẩm sai
+    - mô tả sản phẩm không đúng
+    - hình ảnh không đúng thực tế
+    - màu sắc khác hình
+    - kích thước khác mô tả
+    - chất liệu khác mô tả
+    - nhận sai sản phẩm
+    - giao sai hàng
+    - giao nhầm hàng
+    - thiếu hàng trong đơn
+    - thiếu phụ kiện
+    - thiếu đồ trong hộp
+    - sản phẩm không hoạt động
+    - sản phẩm không dùng được
+    - sản phẩm bị lỗi kỹ thuật
+    - sản phẩm không đúng như mô tả
+    - không hài lòng với sản phẩm
+    - không hài lòng với dịch vụ
+    - muốn phản ánh
+    - muốn báo cáo vấn đề
+    - có vấn đề với đơn hàng
+    - có vấn đề với sản phẩm
+    - có vấn đề cần giải quyết
+    - cần giải quyết khiếu nại
+    - yêu cầu giải quyết
+    - yêu cầu bồi thường
+    - yêu cầu đổi hàng
+    - yêu cầu hoàn tiền
+    - yêu cầu xử lý
+    - escalate vấn đề
+    - báo cáo vấn đề
+    - report issue
+    - file complaint
+    - raise complaint
+    - tôi bực lắm
+    - tôi tức lắm
+    - tôi thất vọng lắm
+    - quá tệ
+    - quá kém
+    - không chấp nhận được
+    - không thể chấp nhận
+    - unacceptable
+    - disappointed
+    - frustrated
+    - angry
+
+- intent: ask_order_place
+  examples: |
+    - tôi muốn đặt hàng
+    - mình muốn mua cái này
+    - cho tôi đặt mua
+    - đặt hàng thế nào
+    - cách đặt hàng như thế nào
+    - làm sao để mua hàng
+    - mua hàng ở đâu
+    - đặt hàng ở đâu
+    - mua online thế nào
+    - đặt online thế nào
+    - thêm vào giỏ hàng thế nào
+    - add to cart thế nào
+    - giỏ hàng ở đâu
+    - cart ở đâu
+    - checkout thế nào
+    - thanh toán thế nào
+    - mua ngay được không
+    - buy now được không
+    - order ngay được không
+    - đặt ngay được không
+    - mình muốn order cái này
+    - cho mình order
+    - cho tôi mua cái này
+    - tôi lấy cái này
+    - tôi mua cái này
+    - mình lấy cái này
+    - mình mua cái này
+    - cho tôi 1 cái
+    - cho mình 2 cái
+    - đặt 1 cái được không
+    - đặt 2 cái được không
+    - đặt 3 cái được không
+    - đặt số lượng bao nhiêu cũng được không
+    - có thể đặt hàng qua chat không
+    - đặt hàng qua zalo được không
+    - đặt hàng qua facebook được không
+    - đặt hàng qua điện thoại được không
+    - đặt hàng qua website được không
+    - đặt hàng qua app được không
+    - có app không
+    - tải app ở đâu
+    - link app ở đâu
+    - đặt hàng cần tài khoản không
+    - cần đăng ký không
+    - đặt hàng không cần đăng ký được không
+    - guest checkout được không
+    - đặt hàng nhanh thế nào
+    - đặt hàng nhanh nhất thế nào
+    - quy trình đặt hàng
+    - các bước đặt hàng
+    - hướng dẫn đặt hàng
+    - order guide
+    - how to order
+    - how to buy
+    - cách mua hàng
+    - hướng dẫn mua hàng
+    - mua hàng lần đầu thế nào
+    - lần đầu mua thế nào
+    - first time buyer guide
+
+- intent: ask_delivery_time
+  examples: |
+    - giao hàng bao lâu
+    - mấy ngày thì nhận được hàng
+    - bao lâu thì nhận được
+    - khi nào nhận được hàng
+    - hàng về khi nào
+    - dự kiến giao hàng ngày nào
+    - estimated delivery là khi nào
+    - ETA là khi nào
+    - giao hàng trong bao nhiêu ngày
+    - giao trong 1 ngày không
+    - giao trong 2 ngày không
+    - giao trong 3 ngày không
+    - giao trong 5 ngày không
+    - giao trong 7 ngày không
+    - giao hàng nhanh không
+    - giao hàng chậm không
+    - có giao hỏa tốc không
+    - có giao trong ngày không
+    - có giao 2 giờ không
+    - có giao 4 giờ không
+    - có giao same day không
+    - same day delivery không
+    - có giao hàng nhanh không
+    - express delivery không
+    - có ship nhanh không
+    - ship nhanh nhất là bao lâu
+    - ship chậm nhất là bao lâu
+    - ship tiêu chuẩn bao lâu
+    - ship nội thành bao lâu
+    - ship ngoại thành bao lâu
+    - ship tỉnh bao lâu
+    - ship ra Hà Nội bao lâu
+    - ship vào HCM bao lâu
+    - ship ra miền Bắc bao lâu
+    - ship vào miền Nam bao lâu
+    - ship miền Trung bao lâu
+    - ship đến tỉnh xa bao lâu
+    - ship đến vùng sâu vùng xa bao lâu
+    - giao hàng cuối tuần không
+    - giao hàng chủ nhật không
+    - giao hàng ngày lễ không
+    - giao hàng ban đêm không
+    - giao hàng buổi tối không
+    - có thể chọn giờ giao không
+    - có thể chọn ngày giao không
+    - có thể hẹn giờ giao không
+    - có thể đổi địa chỉ giao không
+    - có thể thay đổi thời gian giao không
+    - giao hàng có đúng giờ không
+    - giao hàng có đúng hẹn không
+    - giao hàng có trễ không
+    - giao hàng có đảm bảo không
+    - cam kết giao hàng thế nào
+    - nếu giao trễ thì sao
+    - giao trễ có bồi thường không
+    - delivery guarantee
+    - on-time delivery
+    - giao đúng hẹn không

@@ -1,0 +1,157 @@
+version: "3.1"
+
+stories:
+
+- story: Hỏi về chính sách đầy đủ
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: warranty_info
+  - action: utter_warranty_info
+  - intent: return_policy
+  - action: utter_return_policy
+  - intent: payment_methods
+  - action: utter_payment_methods
+  - intent: shipping_info
+  - action: utter_shipping_info
+  - intent: thanks
+  - action: utter_thanks
+
+- story: Khách hàng hỏi về thanh toán và vận chuyển
+  steps:
+  - intent: payment_methods
+  - action: utter_payment_methods
+  - intent: shipping_fee
+  - action: utter_shipping_fee
+  - intent: shipping_info
+  - action: utter_shipping_info
+  - intent: affirm
+  - action: utter_affirm
+
+- story: Hỏi về điểm tích lũy
+  steps:
+  - intent: loyalty_points
+  - action: action_get_loyalty_points
+  - intent: account_info
+  - action: action_get_account_info
+  - intent: coupon_info
+  - action: action_get_coupons
+
+- story: Xem thông tin tài khoản
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: account_info
+  - action: action_get_account_info
+  - intent: loyalty_points
+  - action: action_get_loyalty_points
+  - intent: order_status
+  - action: action_check_order_status
+
+- story: Khách hàng hỏi về bảo hành
+  steps:
+  - intent: warranty_info
+  - action: utter_warranty_info
+  - intent: return_policy
+  - action: utter_return_policy
+  - intent: product_search
+  - action: action_search_products
+
+- story: Hỏi về freeship
+  steps:
+  - intent: shipping_fee
+  - action: utter_shipping_fee
+  - intent: coupon_info
+  - action: action_get_coupons
+  - intent: promotion_current
+  - action: action_get_promotions
+
+- story: Bot giới thiệu bản thân
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+  - intent: product_search
+  - action: action_search_products
+
+- story: Khách hàng hỏi nhiều thông tin
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: bot_challenge
+  - action: utter_iamabot
+  - intent: product_recommend
+  - action: action_recommend_products
+  - intent: promotion_current
+  - action: action_get_promotions
+  - intent: thanks
+  - action: utter_thanks
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: Hỏi freeship và mã giảm giá
+  steps:
+  - intent: shipping_fee
+  - action: utter_shipping_fee
+  - intent: coupon_info
+  - action: action_get_coupons
+  - intent: promotion_current
+  - action: action_get_promotions
+  - intent: thanks
+  - action: utter_thanks
+
+- story: Hỏi bảo hành và đổi trả
+  steps:
+  - intent: warranty_info
+  - action: utter_warranty_info
+  - intent: return_policy
+  - action: utter_return_policy
+  - intent: affirm
+  - action: utter_affirm
+  - intent: thanks
+  - action: utter_thanks
+
+- story: Thanh toán và giao hàng
+  steps:
+  - intent: payment_methods
+  - action: utter_payment_methods
+  - intent: shipping_info
+  - action: utter_shipping_info
+  - intent: shipping_fee
+  - action: utter_shipping_fee
+  - intent: affirm
+  - action: utter_affirm
+
+- story: Tài khoản và điểm
+  steps:
+  - intent: account_info
+  - action: action_get_account_info
+  - intent: loyalty_points
+  - action: action_get_loyalty_points
+  - intent: coupon_info
+  - action: action_get_coupons
+  - intent: thanks
+  - action: utter_thanks
+
+- story: Chào hỏi ngắn gọn
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: product_search
+  - action: action_search_products
+  - intent: thanks
+  - action: utter_thanks
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: Từ chối rồi hỏi tiếp
+  steps:
+  - intent: product_recommend
+  - action: action_recommend_products
+  - intent: deny
+  - action: utter_deny
+  - intent: product_search
+  - action: action_search_products
+  - intent: product_price
+  - action: action_get_product_price
+  - intent: thanks
+  - action: utter_thanks

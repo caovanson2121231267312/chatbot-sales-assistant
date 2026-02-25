@@ -1,0 +1,134 @@
+version: "3.1"
+
+nlu:
+- intent: order_status
+  examples: |
+    - kiểm tra đơn hàng
+    - đơn hàng của tôi
+    - trạng thái đơn
+    - đơn hàng đến đâu rồi
+    - xem đơn hàng
+    - kiểm tra đơn [DH123456](order_number)
+    - đơn hàng [DH123456](order_number)
+    - tình trạng đơn hàng
+    - đơn của tôi thế nào
+    - kiểm tra tình trạng đơn
+    - đơn hàng [DH789012](order_number) thế nào
+    - xem trạng thái đơn [DH345678](order_number)
+    - kiểm tra đơn mã [DH901234](order_number)
+    - đơn [DH567890](order_number) của tôi
+    - tình trạng đơn [DH234567](order_number)
+    - đơn hàng tôi đặt
+    - đơn hàng mới nhất
+    - đơn hàng gần đây
+    - xem lịch sử đơn hàng
+    - kiểm tra đơn đã đặt
+    - đơn hàng đã mua
+    - đơn tôi order
+    - order của tôi
+    - đơn hàng đang xử lý
+    - đơn hàng đang giao
+    - đơn hàng đã giao chưa
+    - khi nào nhận được hàng
+    - hàng về chưa
+    - đã giao hàng chưa
+
+- intent: order_track
+  examples: |
+    - theo dõi vận chuyển
+    - kiểm tra vận đơn
+    - hàng đang ở đâu
+    - tra cứu vận đơn
+    - tracking
+    - kiểm tra giao hàng
+    - hàng đến đâu rồi
+    - khi nào nhận được hàng
+    - vận chuyển thế nào
+    - theo dõi đơn hàng
+    - track đơn hàng
+    - xem vận chuyển
+    - kiểm tra ship
+    - đơn đang ship đến đâu
+    - shipper đến đâu rồi
+    - hàng đang vận chuyển
+    - trạng thái vận chuyển
+    - tình trạng giao hàng
+    - mã vận đơn
+    - số vận đơn
+    - tracking number
+    - tra cứu mã vận đơn
+    - xem vận đơn
+    - hàng đến khi nào
+    - bao giờ nhận được hàng
+    - dự kiến giao hàng
+
+- intent: order_cancel
+  examples: |
+    - hủy đơn hàng
+    - muốn hủy đơn
+    - không muốn mua nữa
+    - hủy đơn
+    - cancel order
+    - hủy đơn [DH123456](order_number)
+    - tôi muốn hủy đơn hàng
+    - làm sao để hủy đơn
+    - hủy order
+    - cancel đơn
+    - không mua nữa
+    - đổi ý không mua
+    - hủy đơn [DH789012](order_number)
+    - muốn hủy đơn [DH345678](order_number)
+    - làm thế nào để hủy đơn hàng
+    - có thể hủy đơn không
+    - hủy được không
+    - hủy đơn hàng [DH901234](order_number)
+    - tôi không muốn đơn này nữa
+    - hủy order [DH567890](order_number)
+    - bỏ đơn hàng
+    - không nhận hàng nữa
+    - hủy giao dịch
+    - hủy mua hàng
+
+- intent: order_return
+  examples: |
+    - trả hàng
+    - hoàn tiền
+    - đổi sản phẩm
+    - hàng bị lỗi
+    - sản phẩm không đúng
+    - muốn đổi trả
+    - return
+    - refund
+    - đổi hàng
+    - trả lại sản phẩm
+    - hoàn lại tiền
+    - sản phẩm lỗi
+    - hàng bị hỏng
+    - không đúng như mô tả
+    - sản phẩm khác với quảng cáo
+    - muốn trả hàng
+    - yêu cầu hoàn tiền
+    - đổi sản phẩm khác
+    - trả hàng lấy tiền
+    - hoàn tiền về tài khoản
+    - sản phẩm bị lỗi kỹ thuật
+    - hàng không dùng được
+    - không vừa ý
+    - không ưng
+    - muốn đổi size khác
+    - đổi màu khác
+    - đổi model khác
+    - chính sách đổi trả
+    - điều kiện đổi trả
+    - refund
+    - hoàn tiền đầy đủ
+    - hoàn toàn bộ
+    - partial refund
+    - hoàn một phần
+    - money back
+    - lấy lại tiền
+    - return policy
+    - chính sách return
+    - warranty claim
+    - bảo hành
+    - claim bảo hành

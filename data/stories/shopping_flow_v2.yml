@@ -1,0 +1,781 @@
+version: "3.1"
+
+stories:
+
+- story: Khách hỏi địa chỉ cửa hàng rồi hỏi sản phẩm
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_store_location
+  - action: utter_store_location
+  - intent: product_search
+    entities:
+    - product_type: "điện thoại"
+  - action: action_search_products
+  - intent: product_price
+  - action: action_get_product_price
+  - intent: product_availability
+  - action: action_check_availability
+  - intent: thanks
+  - action: utter_thanks
+
+- story: Khách hỏi hotline rồi hỏi đơn hàng
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_contact_support
+  - action: utter_contact_info
+  - intent: order_status
+  - action: action_check_order_status
+  - intent: order_track
+  - action: action_track_order
+  - intent: thanks
+  - action: utter_thanks
+
+- story: Khách muốn đặt hàng ngay
+  steps:
+  - intent: product_search
+    entities:
+    - product_name: "iphone 15"
+  - action: action_search_products
+  - intent: product_price
+  - action: action_get_product_price
+  - intent: product_availability
+  - action: action_check_availability
+  - intent: ask_order_place
+  - action: utter_order_place_guide
+  - intent: payment_methods
+  - action: utter_payment_methods
+  - intent: ask_delivery_time
+  - action: utter_delivery_time
+  - intent: affirm
+  - action: utter_affirm
+  - intent: thanks
+  - action: utter_thanks
+
+- story: Khách mua lần đầu hỏi cách đặt hàng
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_order_place
+  - action: utter_order_place_guide
+  - intent: product_search
+    entities:
+    - product_type: "laptop"
+  - action: action_search_products
+  - intent: product_price
+  - action: action_get_product_price
+  - intent: payment_methods
+  - action: utter_payment_methods
+  - intent: ask_delivery_time
+  - action: utter_delivery_time
+  - intent: affirm
+  - action: utter_affirm
+  - intent: thanks
+  - action: utter_thanks
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: Khách khiếu nại sản phẩm lỗi
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: complaint
+  - action: utter_complaint_handler
+  - intent: order_return
+  - action: action_return_order
+  - intent: return_policy
+  - action: utter_return_policy
+  - intent: thanks
+  - action: utter_thanks
+
+- story: Khách khiếu nại giao hàng chậm
+  steps:
+  - intent: complaint
+  - action: utter_complaint_handler
+  - intent: order_track
+  - action: action_track_order
+  - intent: order_status
+  - action: action_check_order_status
+  - intent: thanks
+  - action: utter_thanks
+
+- story: Khách khiếu nại nhận sai hàng
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: complaint
+  - action: utter_complaint_handler
+  - intent: order_return
+  - action: action_return_order
+  - intent: ask_contact_support
+  - action: utter_contact_info
+  - intent: thanks
+  - action: utter_thanks
+
+- story: Khách hỏi giao hàng hỏa tốc
+  steps:
+  - intent: product_search
+    entities:
+    - product_type: "thực phẩm"
+  - action: action_search_products
+  - intent: product_price
+  - action: action_get_product_price
+  - intent: ask_delivery_time
+  - action: utter_delivery_time
+  - intent: shipping_fee
+  - action: utter_shipping_fee
+  - intent: product_availability
+  - action: action_check_availability
+  - intent: affirm
+  - action: utter_affirm
+  - intent: thanks
+  - action: utter_thanks
+
+- story: Khách hỏi ship nhanh rồi mua
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_delivery_time
+  - action: utter_delivery_time
+  - intent: shipping_fee
+  - action: utter_shipping_fee
+  - intent: product_search
+    entities:
+    - product_type: "mỹ phẩm"
+  - action: action_search_products
+  - intent: product_price
+  - action: action_get_product_price
+  - intent: coupon_info
+  - action: action_get_coupons
+  - intent: affirm
+  - action: utter_affirm
+  - intent: thanks
+  - action: utter_thanks
+
+- story: Mua quà tặng sinh nhật bạn gái - full flow
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_gift_recommend
+  - action: action_recommend_products
+  - intent: product_specs
+  - action: action_get_product_specs
+  - intent: ask_product_review
+  - action: action_get_product_reviews
+  - intent: product_price
+  - action: action_get_product_price
+  - intent: coupon_info
+  - action: action_get_coupons
+  - intent: ask_gift_wrap
+  - action: utter_gift_wrap_info
+  - intent: ask_delivery_time
+  - action: utter_delivery_time
+  - intent: affirm
+  - action: utter_affirm
+  - intent: thanks
+  - action: utter_thanks
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: Mua quà tặng mẹ ngày 8/3 - full flow
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_gift_recommend
+  - action: action_recommend_products
+  - intent: product_price
+  - action: action_get_product_price
+  - intent: promotion_current
+  - action: action_get_promotions
+  - intent: coupon_info
+  - action: action_get_coupons
+  - intent: ask_gift_wrap
+  - action: utter_gift_wrap_info
+  - intent: ask_delivery_time
+  - action: utter_delivery_time
+  - intent: shipping_fee
+  - action: utter_shipping_fee
+  - intent: affirm
+  - action: utter_affirm
+  - intent: thanks
+  - action: utter_thanks
+
+- story: Mua sỉ cho công ty - full flow
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: product_search
+    entities:
+    - product_type: "điện thoại"
+  - action: action_search_products
+  - intent: ask_bulk_buy
+  - action: utter_bulk_buy_info
+  - intent: product_price
+  - action: action_get_product_price
+  - intent: ask_authenticity
+  - action: utter_authenticity_info
+  - intent: warranty_info
+  - action: utter_warranty_info
+  - intent: payment_methods
+  - action: utter_payment_methods
+  - intent: shipping_info
+  - action: utter_shipping_info
+  - intent: affirm
+  - action: utter_affirm
+  - intent: thanks
+  - action: utter_thanks
+
+- story: Mua sỉ quà tặng nhân viên dịp tết
+  steps:
+  - intent: ask_gift_recommend
+  - action: action_recommend_products
+  - intent: ask_bulk_buy
+  - action: utter_bulk_buy_info
+  - intent: product_price
+  - action: action_get_product_price
+  - intent: ask_gift_wrap
+  - action: utter_gift_wrap_info
+  - intent: shipping_info
+  - action: utter_shipping_info
+  - intent: payment_methods
+  - action: utter_payment_methods
+  - intent: affirm
+  - action: utter_affirm
+
+- story: Săn flash sale điện thoại - full flow
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_flash_sale
+  - action: action_get_flash_sale
+  - intent: product_search
+    entities:
+    - product_type: "điện thoại"
+  - action: action_search_products
+  - intent: product_specs
+  - action: action_get_product_specs
+  - intent: product_price
+  - action: action_get_product_price
+  - intent: coupon_info
+  - action: action_get_coupons
+  - intent: product_availability
+  - action: action_check_availability
+  - intent: ask_order_place
+  - action: utter_order_place_guide
+  - intent: affirm
+  - action: utter_affirm
+  - intent: thanks
+  - action: utter_thanks
+
+- story: Xem review rồi so sánh rồi mua
+  steps:
+  - intent: product_search
+    entities:
+    - product_type: "laptop"
+  - action: action_search_products
+  - intent: ask_product_review
+  - action: action_get_product_reviews
+  - intent: product_compare
+  - action: action_compare_products
+  - intent: product_specs
+  - action: action_get_product_specs
+  - intent: product_price
+  - action: action_get_product_price
+  - intent: ask_installment
+  - action: utter_installment_info
+  - intent: affirm
+  - action: utter_affirm
+  - intent: thanks
+  - action: utter_thanks
+
+- story: Hỏi size rồi hỏi đổi trả rồi mua
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: product_search
+    entities:
+    - product_type: "quần áo"
+  - action: action_search_products
+  - intent: ask_size_guide
+  - action: utter_size_guide
+  - intent: product_availability
+  - action: action_check_availability
+  - intent: return_policy
+  - action: utter_return_policy
+  - intent: product_price
+  - action: action_get_product_price
+  - intent: ask_delivery_time
+  - action: utter_delivery_time
+  - intent: affirm
+  - action: utter_affirm
+  - intent: thanks
+  - action: utter_thanks
+
+- story: Hỏi chính hãng rồi bảo hành rồi trả góp
+  steps:
+  - intent: product_search
+    entities:
+    - product_name: "macbook pro"
+  - action: action_search_products
+  - intent: ask_authenticity
+  - action: utter_authenticity_info
+  - intent: warranty_info
+  - action: utter_warranty_info
+  - intent: product_price
+  - action: action_get_product_price
+  - intent: ask_installment
+  - action: utter_installment_info
+  - intent: payment_methods
+  - action: utter_payment_methods
+  - intent: affirm
+  - action: utter_affirm
+  - intent: thanks
+  - action: utter_thanks
+
+- story: Phân vân giá rồi mặc cả rồi dùng mã
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: product_search
+    entities:
+    - product_name: "samsung s24 ultra"
+  - action: action_search_products
+  - intent: product_price
+  - action: action_get_product_price
+  - intent: negotiate_price
+  - action: utter_negotiate_price
+  - intent: coupon_info
+  - action: action_get_coupons
+  - intent: promotion_current
+  - action: action_get_promotions
+  - intent: ask_installment
+  - action: utter_installment_info
+  - intent: affirm
+  - action: utter_affirm
+  - intent: thanks
+  - action: utter_thanks
+
+- story: Mua combo điện thoại phụ kiện - full flow
+  steps:
+  - intent: product_search
+    entities:
+    - product_name: "iphone 15"
+  - action: action_search_products
+  - intent: product_specs
+  - action: action_get_product_specs
+  - intent: ask_combo
+  - action: utter_combo_info
+  - intent: product_price
+  - action: action_get_product_price
+  - intent: coupon_info
+  - action: action_get_coupons
+  - intent: ask_delivery_time
+  - action: utter_delivery_time
+  - intent: affirm
+  - action: utter_affirm
+  - intent: thanks
+  - action: utter_thanks
+
+- story: Mua mỹ phẩm chính hãng review combo
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: product_search
+    entities:
+    - product_type: "kem dưỡng"
+  - action: action_search_products
+  - intent: ask_authenticity
+  - action: utter_authenticity_info
+  - intent: ask_product_review
+  - action: action_get_product_reviews
+  - intent: ask_combo
+  - action: utter_combo_info
+  - intent: product_price
+  - action: action_get_product_price
+  - intent: coupon_info
+  - action: action_get_coupons
+  - intent: affirm
+  - action: utter_affirm
+  - intent: thanks
+  - action: utter_thanks
+
+- story: Mua thực phẩm tươi ship nhanh combo
+  steps:
+  - intent: product_search
+    entities:
+    - product_type: "rau củ"
+  - action: action_search_products
+  - intent: product_availability
+  - action: action_check_availability
+  - intent: ask_delivery_time
+  - action: utter_delivery_time
+  - intent: ask_combo
+  - action: utter_combo_info
+  - intent: product_price
+  - action: action_get_product_price
+  - intent: shipping_fee
+  - action: utter_shipping_fee
+  - intent: affirm
+  - action: utter_affirm
+  - intent: thanks
+  - action: utter_thanks
+
+- story: Khách dùng điểm tích lũy mua hàng
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: loyalty_points
+  - action: action_get_loyalty_points
+  - intent: product_search
+    entities:
+    - product_type: "điện thoại"
+  - action: action_search_products
+  - intent: product_price
+  - action: action_get_product_price
+  - intent: negotiate_price
+  - action: utter_negotiate_price
+  - intent: coupon_info
+  - action: action_get_coupons
+  - intent: affirm
+  - action: utter_affirm
+  - intent: thanks
+  - action: utter_thanks
+
+- story: Khách quay lại mua lần 2 hỏi hàng mới
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_new_arrivals
+  - action: action_get_new_arrivals
+  - intent: promotion_current
+  - action: action_get_promotions
+  - intent: product_search
+  - action: action_search_products
+  - intent: product_price
+  - action: action_get_product_price
+  - intent: loyalty_points
+  - action: action_get_loyalty_points
+  - intent: affirm
+  - action: utter_affirm
+  - intent: thanks
+  - action: utter_thanks
+
+- story: Mua đồ trẻ em an toàn chính hãng ship nhanh
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: product_search
+    entities:
+    - product_type: "đồ trẻ em"
+  - action: action_search_products
+  - intent: ask_authenticity
+  - action: utter_authenticity_info
+  - intent: product_specs
+  - action: action_get_product_specs
+  - intent: ask_product_review
+  - action: action_get_product_reviews
+  - intent: product_price
+  - action: action_get_product_price
+  - intent: ask_delivery_time
+  - action: utter_delivery_time
+  - intent: affirm
+  - action: utter_affirm
+  - intent: thanks
+  - action: utter_thanks
+
+- story: Mua đồ gia dụng specs bảo hành trả góp
+  steps:
+  - intent: product_search
+    entities:
+    - product_type: "máy giặt"
+  - action: action_search_products
+  - intent: product_specs
+  - action: action_get_product_specs
+  - intent: ask_product_review
+  - action: action_get_product_reviews
+  - intent: product_price
+  - action: action_get_product_price
+  - intent: ask_installment
+  - action: utter_installment_info
+  - intent: warranty_info
+  - action: utter_warranty_info
+  - intent: return_policy
+  - action: utter_return_policy
+  - intent: affirm
+  - action: utter_affirm
+  - intent: thanks
+  - action: utter_thanks
+
+- story: Mua đồ cho người già dễ dùng bảo hành
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: product_recommend
+    entities:
+    - product_type: "điện thoại"
+  - action: action_recommend_products
+  - intent: product_specs
+  - action: action_get_product_specs
+  - intent: ask_product_review
+  - action: action_get_product_reviews
+  - intent: product_price
+  - action: action_get_product_price
+  - intent: warranty_info
+  - action: utter_warranty_info
+  - intent: ask_delivery_time
+  - action: utter_delivery_time
+  - intent: affirm
+  - action: utter_affirm
+  - intent: thanks
+  - action: utter_thanks
+
+- story: Hủy đơn rồi đặt lại sản phẩm khác
+  steps:
+  - intent: order_cancel
+  - action: action_cancel_order
+  - intent: product_search
+    entities:
+    - product_type: "điện thoại"
+  - action: action_search_products
+  - intent: product_compare
+  - action: action_compare_products
+  - intent: product_price
+  - action: action_get_product_price
+  - intent: ask_order_place
+  - action: utter_order_place_guide
+  - intent: affirm
+  - action: utter_affirm
+  - intent: thanks
+  - action: utter_thanks
+
+- story: Đổi trả sau khi nhận hàng lỗi
+  steps:
+  - intent: complaint
+  - action: utter_complaint_handler
+  - intent: order_return
+  - action: action_return_order
+  - intent: return_policy
+  - action: utter_return_policy
+  - intent: shipping_info
+  - action: utter_shipping_info
+  - intent: thanks
+  - action: utter_thanks
+
+- story: Mua thời trang size màu đổi trả
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: product_search
+    entities:
+    - product_type: "áo khoác"
+  - action: action_search_products
+  - intent: ask_size_guide
+  - action: utter_size_guide
+  - intent: product_availability
+  - action: action_check_availability
+  - intent: product_price
+  - action: action_get_product_price
+  - intent: return_policy
+  - action: utter_return_policy
+  - intent: ask_delivery_time
+  - action: utter_delivery_time
+  - intent: affirm
+  - action: utter_affirm
+  - intent: thanks
+  - action: utter_thanks
+
+- story: Mua điện tử cao cấp - full flow hoàn chỉnh
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: product_search
+    entities:
+    - product_name: "iphone 15 pro max"
+  - action: action_search_products
+  - intent: product_specs
+  - action: action_get_product_specs
+  - intent: ask_product_review
+  - action: action_get_product_reviews
+  - intent: product_compare
+  - action: action_compare_products
+  - intent: ask_authenticity
+  - action: utter_authenticity_info
+  - intent: product_price
+  - action: action_get_product_price
+  - intent: negotiate_price
+  - action: utter_negotiate_price
+  - intent: ask_installment
+  - action: utter_installment_info
+  - intent: coupon_info
+  - action: action_get_coupons
+  - intent: warranty_info
+  - action: utter_warranty_info
+  - intent: ask_delivery_time
+  - action: utter_delivery_time
+  - intent: affirm
+  - action: utter_affirm
+  - intent: thanks
+  - action: utter_thanks
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: Khách hỏi địa chỉ rồi đến xem rồi mua
+  steps:
+  - intent: ask_store_location
+  - action: utter_store_location
+  - intent: product_search
+    entities:
+    - product_type: "laptop"
+  - action: action_search_products
+  - intent: product_specs
+  - action: action_get_product_specs
+  - intent: product_price
+  - action: action_get_product_price
+  - intent: ask_installment
+  - action: utter_installment_info
+  - intent: affirm
+  - action: utter_affirm
+  - intent: thanks
+  - action: utter_thanks
+
+- story: Khách hỏi liên hệ rồi hỏi chính sách
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_contact_support
+  - action: utter_contact_info
+  - intent: warranty_info
+  - action: utter_warranty_info
+  - intent: return_policy
+  - action: utter_return_policy
+  - intent: payment_methods
+  - action: utter_payment_methods
+  - intent: thanks
+  - action: utter_thanks
+
+- story: Khách hỏi hàng mới về rồi flash sale rồi mua
+  steps:
+  - intent: ask_new_arrivals
+  - action: action_get_new_arrivals
+  - intent: ask_flash_sale
+  - action: action_get_flash_sale
+  - intent: product_search
+  - action: action_search_products
+  - intent: product_price
+  - action: action_get_product_price
+  - intent: coupon_info
+  - action: action_get_coupons
+  - intent: ask_order_place
+  - action: utter_order_place_guide
+  - intent: affirm
+  - action: utter_affirm
+  - intent: thanks
+  - action: utter_thanks
+
+- story: Khách mua đồ công nghệ cho sinh viên
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: product_recommend
+    entities:
+    - product_type: "laptop"
+  - action: action_recommend_products
+  - intent: product_specs
+  - action: action_get_product_specs
+  - intent: ask_product_review
+  - action: action_get_product_reviews
+  - intent: product_price
+  - action: action_get_product_price
+  - intent: ask_installment
+  - action: utter_installment_info
+  - intent: coupon_info
+  - action: action_get_coupons
+  - intent: ask_delivery_time
+  - action: utter_delivery_time
+  - intent: affirm
+  - action: utter_affirm
+  - intent: thanks
+  - action: utter_thanks
+
+- story: Khách mua mỹ phẩm Hàn Quốc chính hãng
+  steps:
+  - intent: product_search
+    entities:
+    - product_type: "mỹ phẩm hàn quốc"
+  - action: action_search_products
+  - intent: ask_authenticity
+  - action: utter_authenticity_info
+  - intent: ask_product_review
+  - action: action_get_product_reviews
+  - intent: product_price
+  - action: action_get_product_price
+  - intent: ask_combo
+  - action: utter_combo_info
+  - intent: coupon_info
+  - action: action_get_coupons
+  - intent: ask_delivery_time
+  - action: utter_delivery_time
+  - intent: affirm
+  - action: utter_affirm
+  - intent: thanks
+  - action: utter_thanks
+
+- story: Khách mua đồ thể thao size và chính hãng
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: product_search
+    entities:
+    - product_type: "giày thể thao"
+  - action: action_search_products
+  - intent: ask_authenticity
+  - action: utter_authenticity_info
+  - intent: ask_size_guide
+  - action: utter_size_guide
+  - intent: product_availability
+  - action: action_check_availability
+  - intent: product_price
+  - action: action_get_product_price
+  - intent: return_policy
+  - action: utter_return_policy
+  - intent: affirm
+  - action: utter_affirm
+  - intent: thanks
+  - action: utter_thanks
+
+- story: Khách hỏi chương trình thành viên
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: account_info
+  - action: action_get_account_info
+  - intent: loyalty_points
+  - action: action_get_loyalty_points
+  - intent: promotion_current
+  - action: action_get_promotions
+  - intent: coupon_info
+  - action: action_get_coupons
+  - intent: thanks
+  - action: utter_thanks
+
+- story: Khách mua đồ ăn vặt snack combo ship nhanh
+  steps:
+  - intent: product_search
+    entities:
+    - product_type: "snack"
+  - action: action_search_products
+  - intent: product_price
+  - action: action_get_product_price
+  - intent: ask_combo
+  - action: utter_combo_info
+  - intent: ask_delivery_time
+  - action: utter_delivery_time
+  - intent: shipping_fee
+  - action: utter_shipping_fee
+  - intent: coupon_info
+  - action: action_get_coupons
+  - intent: affirm
+  - action: utter_affirm
+  - intent: thanks
+  - action: utter_thanks

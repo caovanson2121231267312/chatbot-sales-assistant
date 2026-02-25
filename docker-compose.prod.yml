@@ -1,0 +1,160 @@
+# ============================================================
+# docker-compose.prod.yml - Production Stack
+# ============================================================
+# Cách dùng:
+#   cp .env.example .env.production
+#   # Chỉnh sửa .env.production với thông tin thật
+#   docker-compose -f docker-compose.prod.yml --env-file .env.production up -d
+# ============================================================
+
+version: "3.8"
+
+networks:
+  rasa_net:
+    driver: bridge
+
+volumes:
+  rasa_models:
+    driver: local
+  mysql_data:
+    driver: local
+
+services:
+
+  # ── MySQL (tuỳ chọn: bỏ nếu dùng DB ngoài) ──────────────
+  mysql:
+    image: mysql:8.0
+    container_name: rasa_mysql
+    restart: unless-stopped
+    networks: [rasa_net]
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${DB_NAME:-ecommerce_chatbot}
+      MYSQL_USER: ${DB_USER:-rasa}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./database/schema.sql:/docker-entrypoint-initdb.d/01_schema.sql:ro
+      - ./database/sample_data.sql:/docker-entrypoint-initdb.d/02_sample_data.sql:ro
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-p${DB_ROOT_PASSWORD}"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 30s
+    # Không expose port ra ngoài - chỉ nội bộ
+    expose: ["3306"]
+
+  # ── Duckling (entity extraction) ─────────────────────────
+  duckling:
+    image: rasa/duckling:latest
+    container_name: rasa_duckling
+    restart: unless-stopped
+    networks: [rasa_net]
+    expose: ["8000"]
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 15s
+      timeout: 5s
+      retries: 3
+
+  # ── Action Server ─────────────────────────────────────────
+  action_server:
+    build:
+      context: .
+      dockerfile: Dockerfile.prod
+    image: ${DOCKER_IMAGE_PREFIX:-rasa-ecommerce}/action-server:${APP_VERSION:-latest}
+    container_name: rasa_action_server
+    restart: unless-stopped
+    networks: [rasa_net]
+    env_file: .env.production
+    environment:
+      - DB_HOST=${DB_HOST:-mysql}
+      - DB_PORT=${DB_PORT:-3306}
+      - DB_NAME=${DB_NAME:-ecommerce_chatbot}
+      - DB_USER=${DB_USER:-rasa}
+      - DB_PASSWORD=${DB_PASSWORD}
+    expose: ["5055"]
+    depends_on:
+      mysql:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:5055/health')"]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+      start_period: 60s
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  # ── Rasa Server ───────────────────────────────────────────
+  rasa:
+    image: rasa/rasa:3.6.0
+    container_name: rasa_server
+    restart: unless-stopped
+    networks: [rasa_net]
+    volumes:
+      - ./models:/app/models:ro
+      - ./config.yml:/app/config.yml:ro
+      - ./domain.yml:/app/domain.yml:ro
+      - ./credentials.yml:/app/credentials.yml:ro
+      - ./endpoints.docker.yml:/app/endpoints.yml:ro
+      - ./data:/app/data:ro
+    command: >
+      run
+      --enable-api
+      --cors "${RASA_CORS_ORIGINS:-*}"
+      --port 5005
+      --connector socketio
+      --log-file /tmp/rasa.log
+    environment:
+      - RASA_SERVER_PORT=5005
+    expose: ["5005"]
+    depends_on:
+      action_server:
+        condition: service_healthy
+      duckling:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5005/"]
+      interval: 20s
+      timeout: 10s
+      retries: 5
+      start_period: 90s
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "20m"
+        max-file: "5"
+
+  # ── Nginx Reverse Proxy ───────────────────────────────────
+  nginx:
+    image: nginx:1.25-alpine
+    container_name: rasa_nginx
+    restart: unless-stopped
+    networks: [rasa_net]
+    ports:
+      - "${HTTP_PORT:-80}:80"
+      - "${HTTPS_PORT:-443}:443"
+    volumes:
+      - ./nginx/nginx.prod.conf:/etc/nginx/nginx.conf:ro
+      - ./nginx/conf.d:/etc/nginx/conf.d:ro
+      - ./rasa-webchat:/usr/share/nginx/html/widget:ro
+      - ./nginx/ssl:/etc/nginx/ssl:ro          # mount cert nếu có
+      - ./nginx/logs:/var/log/nginx
+    depends_on:
+      rasa:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "nginx", "-t"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"

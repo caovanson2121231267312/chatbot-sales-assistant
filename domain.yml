@@ -1,0 +1,374 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - thanks
+  - affirm
+  - deny
+  - bot_challenge
+  - product_search
+  - product_price
+  - product_availability
+  - product_specs
+  - product_compare
+  - product_recommend
+  - order_status
+  - order_track
+  - order_cancel
+  - order_return
+  - payment_methods
+  - shipping_info
+  - shipping_fee
+  - coupon_info
+  - promotion_current
+  - warranty_info
+  - return_policy
+  - account_info
+  - loyalty_points
+  - ask_gift_recommend
+  - ask_gift_wrap
+  - ask_bulk_buy
+  - ask_new_arrivals
+  - ask_authenticity
+  - ask_installment
+  - ask_flash_sale
+  - ask_combo
+  - ask_size_guide
+  - ask_product_review
+  - negotiate_price
+  - ask_store_location
+  - ask_contact_support
+  - ask_order_place
+  - ask_delivery_time
+  - complaint
+
+entities:
+  - product_type
+  - product_name
+  - brand
+  - color
+  - storage
+  - order_number
+
+slots:
+  product_name:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: product_name
+  
+  product_type:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: product_type
+  
+  brand:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: brand
+  
+  order_number:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: order_number
+  
+  user_email:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: custom
+  
+  user_phone:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: custom
+
+responses:
+  utter_greet:
+  - text: "Xin chào! 👋 Tôi là trợ lý ảo của shop. Tôi có thể giúp gì cho bạn hôm nay?"
+  - text: "Chào bạn! 😊 Bạn cần tư vấn sản phẩm hay kiểm tra đơn hàng?"
+  - text: "Xin chào! Rất vui được hỗ trợ bạn. Bạn đang tìm sản phẩm gì?"
+  - text: "Chào bạn! 🌟 Tôi có thể giúp bạn tìm sản phẩm, kiểm tra đơn hàng, hoặc tư vấn khuyến mãi. Bạn cần gì nhỉ?"
+  - text: "Hello! 👋 Chào mừng bạn đến với shop. Hãy cho tôi biết bạn cần hỗ trợ gì nhé!"
+
+  utter_goodbye:
+  - text: "Cảm ơn bạn đã liên hệ! Hẹn gặp lại! 👋"
+  - text: "Tạm biệt! Chúc bạn một ngày tốt lành! 🌟"
+  - text: "Hẹn gặp lại bạn! Nếu cần hỗ trợ hãy quay lại nhé! 😊"
+  - text: "Cảm ơn bạn! Mua sắm vui vẻ nhé! 🛍️"
+  - text: "Tạm biệt! Chúc bạn có những trải nghiệm mua sắm tuyệt vời! 🎉"
+
+  utter_thanks:
+  - text: "Không có gì! Rất vui được hỗ trợ bạn. 😊"
+  - text: "Cảm ơn bạn! Nếu cần gì thêm hãy hỏi tôi nhé."
+  - text: "Luôn sẵn sàng giúp đỡ bạn! 💪"
+  - text: "Rất vui được giúp đỡ! Nếu có thắc mắc gì cứ hỏi nhé! 😊"
+  - text: "Không có chi! Đó là nhiệm vụ của tôi mà! 🤗"
+
+  utter_affirm:
+  - text: "Tuyệt vời! Để tôi xử lý cho bạn."
+  - text: "Được rồi! Tôi sẽ giúp bạn ngay."
+  - text: "OK! Để tôi kiểm tra cho bạn nhé."
+  - text: "Rất tốt! Tôi sẽ thực hiện ngay."
+  - text: "Vâng! Tôi hiểu rồi, để tôi hỗ trợ bạn."
+
+  utter_deny:
+  - text: "Không sao! Bạn cần tôi hỗ trợ gì khác không?"
+  - text: "Được rồi! Có gì khác tôi có thể giúp bạn?"
+  - text: "OK! Vậy bạn muốn tìm hiểu về sản phẩm nào khác?"
+  - text: "Không vấn đề gì! Bạn quan tâm đến điều gì khác?"
+  - text: "Hiểu rồi! Hãy cho tôi biết nếu bạn cần hỗ trợ gì nhé."
+
+  utter_iamabot:
+  - text: "Tôi là chatbot trợ lý ảo thông minh, được tạo ra để hỗ trợ bạn mua sắm và giải đáp thắc mắc. 🤖"
+  - text: "Tôi là trợ lý ảo AI của shop, luôn sẵn sàng giúp bạn 24/7! 💬"
+  - text: "Tôi là bot AI được thiết kế để tư vấn sản phẩm, kiểm tra đơn hàng và hỗ trợ khách hàng. Tôi có thể giúp gì cho bạn? 🤖"
+  - text: "Xin chào! Tôi là trợ lý ảo thông minh. Tôi có thể giúp bạn:\n• Tìm kiếm sản phẩm\n• Kiểm tra giá và khuyến mãi\n• Tra cứu đơn hàng\n• Tư vấn mua sắm\nBạn cần gì nhỉ?"
+
+  utter_payment_methods:
+  - text: |
+      💳 **Phương thức thanh toán**
+      
+      Chúng tôi hỗ trợ các hình thức thanh toán sau:
+      
+      💵 **COD** - Thanh toán khi nhận hàng
+      🏦 **Chuyển khoản** - Ngân hàng (VCB, TCB, MB...)
+      📱 **Ví điện tử:**
+         • Momo
+         • VNPay
+         • ZaloPay
+      💳 **Thẻ tín dụng** - Visa, Mastercard, JCB
+      
+      🎁 **Ưu đãi đặc biệt:**
+      • Trả góp 0% qua thẻ tín dụng
+      • Giảm thêm 2% khi thanh toán online
+      
+      Bạn có thể chọn phương thức phù hợp khi đặt hàng nhé!
+  - text: |
+      💳 Chúng tôi chấp nhận nhiều hình thức thanh toán:
+      
+      ✅ COD (Thanh toán khi nhận hàng)
+      ✅ Chuyển khoản ngân hàng
+      ✅ Ví điện tử: Momo, VNPay, ZaloPay
+      ✅ Thẻ tín dụng/ghi nợ
+      ✅ Trả góp 0%
+      
+      Bạn muốn thanh toán bằng hình thức nào?
+
+  utter_shipping_info:
+  - text: |
+      ⏰ **Thời gian giao hàng:**
+      
+      📍 **Nội thành Hà Nội, TP.HCM:** 1-2 ngày
+      📍 **Các tỉnh thành khác:** 2-5 ngày
+      📍 **Vùng xa, miền núi:** 5-7 ngày
+      
+      🚚 **Đơn vị vận chuyển:**
+      • Giao hàng nhanh (GHN)
+      • Giao hàng tiết kiệm (GHTK)
+      • VNPost
+      • J&T Express
+      
+      ⚡ **Dịch vụ đặc biệt:**
+      • Giao hàng hỏa tốc (2-4h nội thành)
+      • Giao hàng trong ngày
+      • Giao hàng cuối tuần & lễ
+      
+      Chúng tôi giao hàng 7 ngày/tuần!
+  - text: |
+      🚚 **Thông tin vận chuyển:**
+      
+      • Nội thành: 1-2 ngày
+      • Ngoại thành: 2-3 ngày
+      • Tỉnh xa: 3-5 ngày
+      
+      Giao hàng 7/7 kể cả cuối tuần!
+      
+      Bạn có thể theo dõi đơn hàng qua mã vận đơn nhé!
+
+  utter_shipping_fee:
+  - text: |
+      🚚 **Phí vận chuyển:**
+      
+      📍 **Nội thành HN, HCM:** 20.000đ
+      📍 **Ngoại thành:** 30.000đ
+      📍 **Tỉnh xa:** 35.000 - 50.000đ
+      
+      🎁 **MIỄN PHÍ SHIP:**
+      ✅ Đơn hàng từ 500.000đ
+      ✅ Sử dụng mã FREESHIP
+      ✅ Thành viên VIP
+      
+      💡 **Mẹo tiết kiệm:**
+      • Mua nhiều sản phẩm cùng lúc
+      • Chờ chương trình freeship
+      • Tích điểm đổi voucher freeship
+      
+      Bạn muốn biết phí ship cho đơn hàng cụ thể không?
+  - text: |
+      💰 **Phí vận chuyển:**
+      
+      • Nội thành: 20.000đ
+      • Ngoại thành: 30.000 - 50.000đ
+      
+      🎁 **Miễn phí ship** cho đơn từ 500k!
+      
+      Sử dụng mã FREESHIP để được miễn phí vận chuyển nhé!
+
+  utter_warranty_info:
+  - text: |
+      🛡️ **Chính sách bảo hành:**
+      
+      ✅ **Bảo hành chính hãng:**
+      • Tất cả sản phẩm: 12 tháng
+      • Sản phẩm cao cấp: 24 tháng
+      • Một số sản phẩm: 36 tháng
+      
+      🏢 **Trung tâm bảo hành:**
+      • Bảo hành tại hệ thống toàn quốc
+      • Hơn 60 trung tâm ủy quyền
+      • Hỗ trợ gửi bảo hành tận nơi
+      
+      📋 **Điều kiện bảo hành:**
+      • Có phiếu bảo hành điện tử
+      • Sản phẩm còn tem, niêm phong
+      • Lỗi do nhà sản xuất
+      
+      ⚡ **Quy trình nhanh chóng:**
+      1. Mang sản phẩm + phiếu bảo hành
+      2. Kiểm tra và tiếp nhận (15 phút)
+      3. Sửa chữa/thay thế (3-7 ngày)
+      4. Nhận máy đã sửa
+      
+      💡 **Lưu ý:** Bảo hành không áp dụng cho:
+      • Rơi vỡ, va đập
+      • Vào nước (nếu không chống nước)
+      • Tự ý sửa chữa
+      
+      Bạn cần hỗ trợ bảo hành sản phẩm nào?
+  - text: |
+      🛡️ **Bảo hành sản phẩm:**
+      
+      ✅ Bảo hành chính hãng 12-24 tháng
+      ✅ Đổi mới trong 30 ngày nếu lỗi
+      ✅ Bảo hành tại trung tâm toàn quốc
+      ✅ Hỗ trợ gửi bảo hành tận nơi
+      
+      Bạn sẽ nhận phiếu bảo hành điện tử khi mua hàng!
+
+  utter_return_policy:
+  - text: |
+      🔄 **Chính sách đổi trả:**
+      
+      ✅ **Điều kiện đổi trả:**
+      • Trong vòng 7 ngày kể từ khi nhận hàng
+      • Sản phẩm còn nguyên seal, đầy đủ phụ kiện
+      • Chưa qua sử dụng
+      • Có hóa đơn mua hàng
+      
+      📝 **Quy trình đổi trả:**
+      1. Liên hệ hotline: 1900-xxxx
+      2. Gửi ảnh sản phẩm cần đổi/trả
+      3. Chúng tôi thu hồi sản phẩm (miễn phí)
+      4. Kiểm tra và xử lý trong 24h
+      5. Đổi mới hoặc hoàn tiền
+      
+      💰 **Hoàn tiền:**
+      • Hoàn trong 3-5 ngày làm việc
+      • Hoàn về tài khoản/ví đã thanh toán
+      • Hoàn 100% giá trị sản phẩm
+      
+      🎁 **Trường hợp đặc biệt:**
+      • Sản phẩm lỗi: Đổi mới trong 30 ngày
+      • Giao sai hàng: Đổi ngay, miễn phí ship
+      • Không vừa ý: Đổi size/màu trong 7 ngày
+      
+      ❌ **Không áp dụng cho:**
+      • Sản phẩm đã qua sử dụng
+      • Sản phẩm khuyến mãi đặc biệt
+      • Sản phẩm làm theo yêu cầu
+      
+      Bạn cần hỗ trợ đổi trả sản phẩm nào?
+  - text: |
+      🔄 **Đổi trả dễ dàng:**
+      
+      ✅ Đổi trả trong 7 ngày
+      ✅ Sản phẩm lỗi đổi mới trong 30 ngày
+      ✅ Hoàn tiền 100% nếu không đổi được
+      ✅ Miễn phí vận chuyển đổi trả
+      
+      Liên hệ hotline để được hỗ trợ đổi trả nhé!
+
+  utter_default:
+  - text: "Xin loi, toi chua hieu y ban. Ban co the noi ro hon duoc khong?"
+  - text: "Toi chua hieu cau hoi cua ban. Ban can ho tro ve san pham, don hang hay chinh sach?"
+  - text: "Hmm, toi chua ro ban muon hoi gi. Ban co the dien dat lai duoc khong?"
+  - text: "Xin loi, toi can ban giai thich ro hon. Ban dang tim san pham, kiem tra don hang, hay can tu van?"
+
+  utter_store_location:
+  - text: "Cua hang cua chung toi co mat tai nhieu tinh thanh tren ca nuoc. Ban co the xem danh sach cua hang tai website hoac lien he hotline de biet dia chi gan nhat!"
+
+  utter_contact_info:
+  - text: "Ban co the lien he chung toi qua:\n- Hotline: 1900-xxxx (8h-22h)\n- Email: support@shop.com\n- Facebook: fb.com/shop\n- Zalo: 0xxx-xxx-xxx"
+
+  utter_order_place_guide:
+  - text: "De dat hang, ban thuc hien theo cac buoc:\n1. Chon san pham va them vao gio hang\n2. Kiem tra gio hang\n3. Nhap thong tin giao hang\n4. Chon phuong thuc thanh toan\n5. Xac nhan don hang\nBan se nhan email xac nhan ngay sau khi dat hang thanh cong!"
+
+  utter_delivery_time:
+  - text: "Thoi gian giao hang:\n- Noi thanh HN, HCM: 1-2 ngay\n- Cac tinh thanh khac: 2-5 ngay\n- Vung xa, mien nui: 5-7 ngay\nChung toi giao hang 7 ngay/tuan!"
+
+  utter_complaint_handler:
+  - text: "Toi rat xin loi vi su co nay! Vui long cho toi biet chi tiet de toi ho tro ban tot nhat. Ban co the lien he hotline 1900-xxxx hoac gui email de duoc xu ly nhanh nhat."
+
+  utter_gift_wrap_info:
+  - text: "Chung toi co dich vu goi qua tang dep mat! Phi goi qua: 20.000d/san pham. Ban co the ghi kem thiep chuc mung mien phi. Chon 'Goi qua tang' khi dat hang nhe!"
+
+  utter_bulk_buy_info:
+  - text: "Mua so luong lon se duoc giam gia hap dan:\n- Tu 5 san pham: giam 5%\n- Tu 10 san pham: giam 10%\n- Tu 20 san pham: giam 15%\nLien he hotline de duoc bao gia tot nhat!"
+
+  utter_authenticity_info:
+  - text: "Tat ca san pham tai shop deu la hang chinh hang 100%, co tem chong hang gia va phieu bao hanh chinh thuc. Chung toi cam ket hoan tien neu phat hien hang gia!"
+
+  utter_installment_info:
+  - text: "Chung toi ho tro tra gop 0% lai suat qua the tin dung:\n- Ky han: 3, 6, 12, 24 thang\n- The Visa, Mastercard, JCB\n- Ngan hang: VCB, TCB, MB, ACB...\nDon hang tu 3 trieu dong tro len!"
+
+  utter_size_guide:
+  - text: "Ban co the xem bang size chi tiet tren trang san pham. Neu can tu van them, hay cho toi biet san pham ban dang quan tam de toi ho tro chinh xac hon!"
+
+  utter_negotiate_price:
+  - text: "Gia cua chung toi da la gia tot nhat thi truong! Tuy nhien ban co the:\n- Dung ma giam gia de tiet kiem them\n- Mua combo de duoc gia tot hon\n- Theo doi flash sale hang ngay\nBan co muon toi tim ma giam gia cho ban khong?"
+
+  utter_combo_info:
+  - text: "Chung toi co nhieu combo san pham gia tot! Mua combo tiet kiem hon mua le 15-30%. Xem cac combo hien co tren website hoac cho toi biet ban can combo gi de tu van!"
+
+actions:
+  - action_search_products
+  - action_get_product_price
+  - action_check_availability
+  - action_get_product_specs
+  - action_compare_products
+  - action_recommend_products
+  - action_check_order_status
+  - action_track_order
+  - action_cancel_order
+  - action_return_order
+  - action_get_coupons
+  - action_get_promotions
+  - action_get_account_info
+  - action_get_loyalty_points
+  - action_get_new_arrivals
+  - action_get_flash_sale
+  - action_get_product_reviews
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

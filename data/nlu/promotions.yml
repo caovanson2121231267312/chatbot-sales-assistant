@@ -1,0 +1,141 @@
+version: "3.1"
+
+nlu:
+- intent: coupon_info
+  examples: |
+    - có mã giảm giá không
+    - voucher
+    - mã khuyến mãi
+    - discount code
+    - mã giảm giá
+    - có coupon không
+    - cho tôi mã giảm giá
+    - mã ưu đãi
+    - có mã nào không
+    - mã giảm giá hiện tại
+    - voucher nào đang có
+    - coupon code
+    - promo code
+    - mã khuyến mại
+    - mã sale
+    - mã ưu đãi gì
+    - có voucher gì không
+    - cho xem mã giảm giá
+    - mã giảm giá mới nhất
+    - voucher mới
+    - coupon mới
+    - mã giảm giá tháng này
+    - voucher tháng này
+    - có mã freeship không
+    - mã miễn phí vận chuyển
+    - mã giảm giá cho khách mới
+    - mã giảm giá thành viên
+    - voucher vip
+    - mã độc quyền
+
+- intent: promotion_current
+  examples: |
+    - khuyến mãi gì
+    - có chương trình giảm giá không
+    - sale gì
+    - ưu đãi gì
+    - có giảm giá không
+    - chương trình khuyến mãi
+    - đang có sale gì
+    - khuyến mãi hiện tại
+    - ưu đãi hiện tại
+    - chương trình ưu đãi
+    - sale gì hôm nay
+    - khuyến mãi hôm nay
+    - giảm giá gì
+    - có giảm giá sản phẩm nào không
+    - sản phẩm nào đang sale
+    - đang có ưu đãi gì
+    - chương trình hot
+    - deal hot
+    - flash sale
+    - giảm giá sốc
+    - khuyến mãi lớn
+    - big sale
+    - mega sale
+    - sale cuối năm
+    - khuyến mãi tết
+    - sale sinh nhật
+    - khuyến mãi đặc biệt
+    - ưu đãi độc quyền
+    - giảm giá cực sốc
+    - sale
+    - giảm giá
+    - khuyến mãi
+    - promotion
+    - ưu đãi gì
+    - deal gì
+    - offer gì
+    - what's on sale
+    - đang sale gì
+    - có gì sale
+    - sale gì hot
+    - hot deal
+    - deal hot
+    - best deal
+    - deal tốt nhất
+    - big sale
+    - sale lớn
+    - mega sale
+    - super sale
+    - flash sale
+    - sale nhanh
+    - limited time
+    - thời gian giới hạn
+    - today only
+    - chỉ hôm nay
+    - weekend sale
+    - sale cuối tuần
+    - black friday
+    - 11 11
+    - double 11
+    - 12 12
+    - single day
+    - ngày độc thân
+    - tết sale
+    - sale tết
+    - cuối năm
+    - sale cuối năm
+    - new year sale
+    - sale năm mới
+    - clearance
+    - thanh lý
+    - xả kho
+    - end of season
+    - hết mùa
+    - last chance
+    - cơ hội cuối
+    - don't miss
+    - đừng bỏ lỡ
+    - grab now
+    - mua ngay
+    - buy now
+    - shop now
+    - mua sắm ngay
+    - special offer
+    - ưu đãi đặc biệt
+    - limited offer
+    - ưu đãi giới hạn
+    - exclusive offer
+    - ưu đãi độc quyền
+    - member only
+    - chỉ thành viên
+    - vip only
+    - chỉ vip
+    - extra discount
+    - giảm thêm
+    - additional discount
+    - stack coupon
+    - dùng nhiều mã
+    - combine coupon
+    - kết hợp mã
+    - max discount
+    - giảm tối đa
+    - cap
+    - giới hạn
+    - limit

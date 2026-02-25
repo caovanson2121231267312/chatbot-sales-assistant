@@ -1,0 +1,428 @@
+version: "3.1"
+
+nlu:
+- intent: product_search
+  examples: |
+    - tìm [mỹ phẩm](product_type)
+    - có [son](product_type) nào
+    - tìm [kem dưỡng da](product_type)
+    - cho xem [serum](product_type)
+    - có [sữa rửa mặt](product_type) không
+    - tìm [tạp hóa](product_type)
+    - [thực phẩm](product_type)
+    - tìm [đồ khô](product_type)
+    - có [bánh kẹo](product_type) không
+    - tìm [nước uống](product_type)
+    - [sữa](product_type)
+    - [đồ gia dụng](product_type)
+    - tìm [gia vị](product_type)
+    - có [mì gói](product_type) không
+    - tìm [dầu gội](product_type)
+    - [sữa tắm](product_type)
+    - tìm [nước hoa](product_type)
+    - có [trang điểm](product_type) không
+    - tìm [chăm sóc da](product_type)
+    - [dưỡng da](product_type)
+    - tìm [son môi](product_type)
+    - [phấn](product_type)
+    - [kem chống nắng](product_type)
+    - tìm [toner](product_type)
+    - có [mặt nạ](product_type) không
+    - tìm [quần áo](product_type)
+    - [thời trang](product_type)
+    - có [giày dép](product_type) không
+    - tìm [túi xách](product_type)
+    - [váy](product_type)
+    - [áo thun](product_type)
+    - tìm [đồ trẻ em](product_type)
+    - có [sữa bột](product_type) không
+    - tìm [bỉm tã](product_type)
+    - [đồ đông lạnh](product_type)
+    - tìm [rau củ](product_type)
+    - [trái cây](product_type)
+    - có [thịt cá](product_type) không
+    - tìm [đồ uống có ga](product_type)
+    - [cà phê](product_type)
+    - [trà](product_type)
+    - tìm [bột giặt](product_type)
+    - [nước xả vải](product_type)
+    - có [nước rửa chén](product_type) không
+    - tìm [khăn giấy](product_type)
+    - [giấy vệ sinh](product_type)
+    - tìm [mỹ phẩm hàn quốc](product_type)
+    - [son kem](product_type)
+    - [son lì](product_type)
+    - tìm [kem nền](product_type)
+    - có [phấn phủ](product_type) không
+    - tìm [chì kẻ mày](product_type)
+    - [mascara](product_type)
+    - [kem che khuyết điểm](product_type)
+    - tìm [sữa dưỡng thể](product_type)
+    - [xà phòng](product_type)
+    - có [dầu xả](product_type) không
+    - tìm [vitamin](product_type)
+    - [thực phẩm chức năng](product_type)
+    - [đồ ăn vặt](product_type)
+    - tìm [snack](product_type)
+    - có [bánh ngọt](product_type) không
+    - tìm [socola](product_type)
+    - [kẹo](product_type)
+    - [bánh quy](product_type)
+    - tìm [mì ăn liền](product_type)
+    - [đồ hộp](product_type)
+    - có [nước mắm](product_type) không
+    - tìm [dầu ăn](product_type)
+    - [bột nêm](product_type)
+    - [nước tương](product_type)
+    - tìm [quần jean](product_type)
+    - [áo khoác](product_type)
+    - có [đầm](product_type) không
+    - tìm [áo sơ mi](product_type)
+    - [quần short](product_type)
+    - [đồ lót](product_type)
+    - tìm [vớ](product_type)
+    - [khăn choàng](product_type)
+    - có [mắt kính](product_type) không
+    - tìm [ví](product_type)
+    - [thắt lưng](product_type)
+    - [đồng hồ đeo tay](product_type)
+    - tìm [trang sức](product_type)
+    - [vòng tay](product_type)
+    - [dây chuyền](product_type)
+    - gợi ý [mỹ phẩm](product_type) cho da dầu
+    - tìm [kem dưỡng ẩm](product_type)
+    - có [son không trôi](product_type) không
+    - tìm [sữa tắm trắng da](product_type)
+    - [dầu gội trị rụng tóc](product_type)
+    - tìm [thực phẩm organic](product_type)
+    - [đồ tươi sống](product_type)
+    - có [hải sản](product_type) không
+    - tìm [đồ ăn sẵn](product_type)
+    - [cơm hộp](product_type)
+    - [salad](product_type)
+    - tìm [đồ uống healthy](product_type)
+    - [nước ép](product_type)
+    - [smoothie](product_type)
+    - có [sữa hạt](product_type) không
+    - tìm [yến mạch](product_type)
+    - [hạt dinh dưỡng](product_type)
+    - [trái cây sấy](product_type)
+    - tìm [đồ chơi](product_type)
+    - [sách vở](product_type)
+    - có [văn phòng phẩm](product_type) không
+    - tìm [đồ dùng học tập](product_type)
+    - [balo](product_type)
+    - [cặp sách](product_type)
+    - tìm [vali](product_type)
+    - [túi du lịch](product_type)
+    - có [đồ thể thao](product_type) không
+    - tìm [áo thể thao](product_type)
+    - [giày chạy bộ](product_type)
+    - [đồ bơi](product_type)
+    - tìm [nội thất](product_type)
+    - [bàn ghế](product_type)
+    - có [đèn](product_type) không
+    - tìm [chăn ga gối](product_type)
+    - [rèm cửa](product_type)
+    - [đồ trang trí](product_type)
+    - tìm [cây cảnh](product_type)
+    - [chậu hoa](product_type)
+    - có [đồ nhà bếp](product_type) không
+    - tìm [nồi cơm điện](product_type)
+    - [máy xay](product_type)
+    - [lò vi sóng](product_type)
+    - tìm [tủ lạnh](product_type)
+    - [máy giặt](product_type)
+    - [quạt](product_type)
+    - có [điều hòa](product_type) không
+    - tìm [máy lọc nước](product_type)
+    - [bình nước nóng](product_type)
+    - [ấm đun nước](product_type)
+
+- intent: product_price
+  examples: |
+    - giá [son](product_type) bao nhiêu
+    - [kem dưỡng](product_type) mấy tiền
+    - giá [serum](product_type)
+    - [mỹ phẩm](product_type) bao nhiêu
+    - giá [sữa rửa mặt](product_type)
+    - [tạp hóa](product_type) giá thế nào
+    - giá [bánh kẹo](product_type)
+    - [nước uống](product_type) bao nhiêu
+    - giá [dầu gội](product_type)
+    - [sữa tắm](product_type) mấy tiền
+    - giá [nước hoa](product_type)
+    - [quần áo](product_type) bao nhiêu
+    - giá [giày](product_type)
+    - [túi xách](product_type) mấy tiền
+    - giá [mì gói](product_type)
+    - [gia vị](product_type) bao nhiêu
+    - giá [sữa](product_type)
+    - [thực phẩm](product_type) giá thế nào
+    - giá [kem chống nắng](product_type)
+    - [mặt nạ](product_type) bao nhiêu
+    - giá [toner](product_type)
+    - [phấn](product_type) mấy tiền
+    - giá [áo thun](product_type)
+    - [váy](product_type) bao nhiêu
+    - [đồ gia dụng](product_type) giá thế nào
+    - giá [bột giặt](product_type)
+    - [nước rửa chén](product_type) bao nhiêu
+    - giá [rau củ](product_type)
+    - [trái cây](product_type) mấy tiền
+    - [cà phê](product_type) giá bao nhiêu
+    - giá [thịt](product_type)
+    - [đồ đông lạnh](product_type) bao nhiêu
+    - giá [bỉm](product_type)
+    - [sữa bột](product_type) mấy tiền
+    - [vitamin](product_type) giá thế nào
+    - giá [snack](product_type)
+    - [bánh ngọt](product_type) bao nhiêu
+    - [socola](product_type) mấy tiền
+    - giá [đồ hộp](product_type)
+    - [nước mắm](product_type) bao nhiêu
+    - [dầu ăn](product_type) giá thế nào
+    - giá [quần jean](product_type)
+    - [áo khoác](product_type) mấy tiền
+    - [đầm](product_type) bao nhiêu
+    - giá [ví](product_type)
+    - [trang sức](product_type) mấy tiền
+    - [đồng hồ](product_type) giá bao nhiêu
+    - giá [balo](product_type)
+    - [vali](product_type) bao nhiêu
+    - [nồi cơm điện](product_type) giá thế nào
+    - giá [máy xay](product_type)
+    - [lò vi sóng](product_type) mấy tiền
+    - [tủ lạnh](product_type) bao nhiêu
+    - giá [máy giặt](product_type)
+    - [điều hòa](product_type) mấy tiền
+    - [chăn ga gối](product_type) giá bao nhiêu
+    - giá [nội thất](product_type)
+    - [bàn ghế](product_type) bao nhiêu
+
+- intent: product_availability
+  examples: |
+    - [son](product_type) còn hàng không
+    - còn [kem dưỡng](product_type) không
+    - [mỹ phẩm](product_type) có sẵn không
+    - [serum](product_type) còn không
+    - có [sữa rửa mặt](product_type) không
+    - [tạp hóa](product_type) còn hàng không
+    - còn [bánh kẹo](product_type) không
+    - [nước uống](product_type) có không
+    - [dầu gội](product_type) còn không
+    - có [sữa tắm](product_type) không
+    - [nước hoa](product_type) còn hàng không
+    - còn [quần áo](product_type) không
+    - [giày](product_type) có sẵn không
+    - [mì gói](product_type) còn không
+    - có [gia vị](product_type) không
+    - [sữa](product_type) còn hàng không
+    - còn [rau củ](product_type) không
+    - [trái cây](product_type) có không
+    - [thịt](product_type) còn không
+    - có [đồ đông lạnh](product_type) không
+    - [bỉm](product_type) còn hàng không
+    - còn [sữa bột](product_type) không
+    - [váy](product_type) có sẵn không
+    - [áo khoác](product_type) còn không
+    - có [size L](product_type) không
+    - [màu đỏ](color) còn không
+    - còn [màu nude](color) không
+    - [son đỏ](product_type) còn hàng không
+    - có [kem dưỡng da khô](product_type) không
+    - [dầu gội trị gàu](product_type) còn không
+    - còn [bột giặt](product_type) không
+    - [nước xả](product_type) có không
+    - [giấy vệ sinh](product_type) còn hàng không
+    - có [khăn giấy](product_type) không
+    - [cà phê](product_type) còn không
+    - còn [trà](product_type) không
+    - [vitamin](product_type) có sẵn không
+    - [đồ gia dụng](product_type) còn hàng không
+    - có [nồi cơm](product_type) không
+    - [máy xay](product_type) còn không
+    - [tủ lạnh](product_type) còn hàng không
+    - còn [máy giặt](product_type) không
+    - [chăn ga](product_type) có không
+    - [bàn ghế](product_type) còn không
+    - có [đèn](product_type) không
+    - [balo](product_type) còn hàng không
+    - còn [vali](product_type) không
+    - [đồ trẻ em](product_type) có sẵn không
+    - [sữa công thức](product_type) còn không
+    - có [bỉm size M](product_type) không
+    - [đồ chơi](product_type) còn hàng không
+    - còn [sách](product_type) không
+    - [văn phòng phẩm](product_type) có không
+
+- intent: product_compare
+  examples: |
+    - so sánh [son](product_type) và [son lì](product_type)
+    - [kem dưỡng](product_type) và [serum](product_type) khác gì
+    - so sánh [dầu gội](product_type) [laneige](brand) và [innisfree](brand)
+    - [sữa rửa mặt](product_type) nào tốt hơn
+    - [mỹ phẩm hàn](product_type) và [mỹ phẩm nhật](product_type) khác nhau thế nào
+    - so sánh [nước hoa](product_type)
+    - [bột giặt](product_type) [omo](brand) và [tide](brand) cái nào tốt
+    - [sữa tươi](product_type) [vinamilk](brand) và [dutch lady](brand)
+    - so sánh [nồi cơm điện](product_type)
+    - [máy xay](product_type) [panasonic](brand) và [philips](brand) khác gì
+    - [tủ lạnh](product_type) [samsung](brand) hay [lg](brand)
+    - [quần jean](product_type) và [quần âu](product_type) nên mua cái nào
+    - so sánh [giày](product_type) [nike](brand) [adidas](brand)
+    - [áo khoác](product_type) nào ấm hơn
+    - [kem chống nắng](product_type) [anessa](brand) và [biore](brand)
+    - [serum](product_type) vitamin C và vitamin E khác gì
+    - [mặt nạ](product_type) dưỡng ẩm và [mặt nạ](product_type) làm sạch
+    - [sữa tắm](product_type) trắng da và [sữa tắm](product_type) dưỡng ẩm
+    - [mì gói](product_type) [acecook](brand) và [kokomi](brand)
+    - [cà phê](product_type) [trung nguyen](brand) và [nestle](brand)
+    - [dầu gội](product_type) trị gàu và [dầu gội](product_type) trị rụng tóc
+    - nên chọn [son kem](product_type) hay [son lì](product_type)
+    - [kem nền](product_type) và [phấn phủ](product_type) dùng thế nào
+    - [bỉm](product_type) [huggies](brand) và [pampers](brand)
+    - [sữa bột](product_type) cho bé 1 tuổi nào tốt
+    - [balo](product_type) và [túi xách](product_type) cho sinh viên
+    - [chăn ga](product_type) cotton và [chăn ga](product_type) lụa
+    - [máy giặt](product_type) cửa trước và cửa trên
+    - [điều hòa](product_type) 1 chiều và 2 chiều
+
+- intent: product_specs
+  examples: |
+    - [son](product_type) có thành phần gì
+    - [kem dưỡng](product_type) có SPF không
+    - [serum](product_type) dùng cho da gì
+    - thông số [máy xay](product_type)
+    - [tủ lạnh](product_type) bao nhiêu lít
+    - [nồi cơm điện](product_type) dung tích bao nhiêu
+    - [máy giặt](product_type) công suất mấy kg
+    - [điều hòa](product_type) bao nhiêu BTU
+    - [kem chống nắng](product_type) SPF bao nhiêu
+    - [dầu gội](product_type) có paraben không
+    - [sữa](product_type) có đường không
+    - [bỉm](product_type) size bao nhiêu
+    - [quần áo](product_type) có size gì
+    - [giày](product_type) size bao nhiêu
+    - [chăn ga](product_type) size giường gì
+    - [mỹ phẩm](product_type) có test trên động vật không
+    - [thực phẩm](product_type) có chất bảo quản không
+    - [rau củ](product_type) có organic không
+    - [sữa bột](product_type) có DHA không
+    - [nước hoa](product_type) lưu hương bao lâu
+    - [mặt nạ](product_type) dùng mấy lần tuần
+    - [toner](product_type) dùng trước hay sau serum
+    - [bột giặt](product_type) giặt tay được không
+    - [nồi cơm](product_type) nấu được mấy cup
+    - [máy xay](product_type) công suất bao nhiêu W
+    - [lò vi sóng](product_type) dung tích bao nhiêu
+    - [bình nước](product_type) giữ nhiệt mấy giờ
+    - [balo](product_type) bao nhiêu lít
+    - [vali](product_type) size bao nhiêu inch
+    - [đèn](product_type) công suất bao nhiêu
+    - [quạt](product_type) có điều khiển từ xa không
+    - [máy lọc nước](product_type) lọc được mấy cấp
+
+- intent: product_recommend
+  examples: |
+    - gợi ý [mỹ phẩm](product_type)
+    - [son](product_type) nào đẹp
+    - tư vấn [kem dưỡng da](product_type)
+    - [serum](product_type) nào tốt
+    - [sữa rửa mặt](product_type) cho da dầu
+    - gợi ý [tạp hóa](product_type)
+    - [thực phẩm](product_type) nào ngon
+    - [đồ ăn vặt](product_type) nào hot
+    - [dầu gội](product_type) nào tốt
+    - [sữa tắm](product_type) thơm
+    - gợi ý [nước hoa](product_type)
+    - [trang điểm](product_type) cho người mới
+    - [kem chống nắng](product_type) nào tốt
+    - [mặt nạ](product_type) dưỡng da
+    - gợi ý [quần áo](product_type)
+    - [thời trang](product_type) nào đẹp
+    - [giày](product_type) nào thoải mái
+    - [túi xách](product_type) hợp túi tiền
+    - [váy](product_type) đi tiệc
+    - gợi ý [đồ gia dụng](product_type)
+    - [nồi cơm](product_type) nào tốt
+    - [máy xay](product_type) giá rẻ
+    - [bột giặt](product_type) nào thơm
+    - [nước rửa chén](product_type) sạch
+    - gợi ý [đồ uống](product_type)
+    - [cà phê](product_type) nào ngon
+    - [trà](product_type) giảm cân
+    - [sữa](product_type) cho trẻ
+    - [vitamin](product_type) tăng đề kháng
+    - [thực phẩm chức năng](product_type) cho người già
+    - gợi ý [đồ trẻ em](product_type)
+    - [sữa bột](product_type) cho bé 1 tuổi
+    - [bỉm](product_type) nào mềm
+    - [đồ chơi](product_type) an toàn
+    - [balo](product_type) cho sinh viên
+    - [vali](product_type) du lịch
+    - gợi ý [nội thất](product_type)
+    - [bàn ghế](product_type) văn phòng
+    - [chăn ga](product_type) mát
+    - [đèn](product_type) trang trí
+    - [mỹ phẩm](product_type) cho da nhạy cảm
+    - [son](product_type) không trôi
+    - [kem dưỡng](product_type) chống lão hóa
+    - [serum](product_type) vitamin C
+    - [dầu gội](product_type) trị rụng tóc
+    - [sữa tắm](product_type) trắng da
+    - [quần áo](product_type) công sở
+    - [giày](product_type) thể thao
+    - [áo khoác](product_type) mùa đông
+    - [đầm](product_type) dự tiệc
+    - [thực phẩm](product_type) healthy
+    - [đồ ăn](product_type) ít calo
+    - [snack](product_type) ăn kiêng
+    - [nước uống](product_type) tốt cho sức khỏe
+    - [rau củ](product_type) organic
+    - [trái cây](product_type) tươi
+    - [gia vị](product_type) nấu ăn
+    - [mì gói](product_type) ngon
+    - [đồ hộp](product_type) tiện lợi
+    - [bánh](product_type) ăn sáng
+    - [sữa](product_type) tươi
+    - [cà phê](product_type) nguyên chất
+    - [trà](product_type) sữa
+    - [nước ép](product_type) trái cây
+    - [đồ đông lạnh](product_type) chế biến nhanh
+    - [thịt](product_type) tươi
+    - [hải sản](product_type) tươi sống
+    - [đồ nhà bếp](product_type) cần thiết
+    - [tủ lạnh](product_type) tiết kiệm điện
+    - [máy giặt](product_type) công suất lớn
+    - [điều hòa](product_type) tiết kiệm điện
+    - [máy lọc nước](product_type) gia đình
+    - [quạt](product_type) mát
+    - [bình nước](product_type) giữ nhiệt
+    - [chăn](product_type) ấm mùa đông
+    - [ga gối](product_type) cao cấp
+    - [rèm](product_type) chống nắng
+    - [cây cảnh](product_type) dễ chăm
+    - [đồ trang trí](product_type) nhà cửa
+    - [văn phòng phẩm](product_type) học sinh
+    - [sách](product_type) bestseller
+    - [đồ chơi](product_type) giáo dục
+    - [đồ thể thao](product_type) chạy bộ
+    - [áo thể thao](product_type) thấm mồ hôi
+    - [giày chạy](product_type) êm
+    - [đồ bơi](product_type) nam nữ
+    - [trang sức](product_type) bạc
+    - [vòng tay](product_type) đẹp
+    - [dây chuyền](product_type) vàng
+    - [mắt kính](product_type) thời trang
+    - [ví](product_type) da
+    - [thắt lưng](product_type) nam
+    - [túi xách](product_type) nữ công sở
+    - [áo sơ mi](product_type) nam
+    - [quần âu](product_type) công sở
+    - [quần jean](product_type) nam nữ
+    - [áo thun](product_type) basic
+    - [quần short](product_type) mùa hè
+    - [đồ lót](product_type) thoải mái
+    - [vớ](product_type) cotton
+    - [khăn choàng](product_type) ấm

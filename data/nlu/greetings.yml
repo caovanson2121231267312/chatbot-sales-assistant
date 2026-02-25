@@ -1,0 +1,669 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - xin chào
+    - chào bạn
+    - hello
+    - hi
+    - chào shop
+    - chào admin
+    - chào buổi sáng
+    - chào buổi chiều
+    - chào buổi tối
+    - hey
+    - chào
+    - alo
+    - hi shop
+    - chào cửa hàng
+    - xin chào shop
+    - chào anh
+    - chào chị
+    - good morning
+    - good afternoon
+    - good evening
+    - hế nhô
+    - hê lô
+    - halo
+    - chào em
+    - chào bác
+    - xin chào mọi người
+    - chào shop ơi
+    - chào ad
+    - chào page
+    - hi there
+    - hello there
+    - chào bạn nhé
+    - xin chào ạ
+    - dạ chào
+    - chào anh chị
+    - chào mọi người
+    - good day
+    - chào buổi tối nhé
+    - chào sáng
+    - chào chiều
+    - hey there
+    - hi hi
+    - hello bạn
+    - chào bạn tôi cần hỏi
+    - cho tôi hỏi
+    - cho hỏi chút
+    - xin phép hỏi
+    - mình cần tư vấn
+    - tôi cần hỗ trợ
+    - cần hỏi chút
+    - cho em hỏi
+    - cho anh hỏi
+    - alo shop
+    - alo có ai không
+    -  có người không
+    - shop ơi
+    - shop có online không
+    - chào nhân viên
+    - chào cs kh
+    - chào bộ phận chăm sóc khách hàng
+    - em chào anh chị
+    - anh chào em
+    - chào lần đầu
+    - lần đầu mua hàng
+    - chào lần đầu tiên
+    - rất vui được gặp
+    - nice to meet you
+    - how are you
+    - bạn khỏe không
+    - chào hôm nay
+    - hi buổi sáng
+    - chào ngày mới
+    - good to see you
+    - long time no see
+    - chào lại
+    - quay lại rồi đây
+    - mình quay lại rồi
+    - lại cần nhờ shop
+    - lại làm phiền
+    - xin chào lần nữa
+    - chào lại shop
+    - hey bạn
+    - yo
+    - sup
+    - what's up
+    - chào cậu
+    - chào ông
+    - chào bà
+    - e chào a/c
+    - dạ em chào
+    - chào ạ
+    - hiện tại có ai không
+    - đang có nhân viên không
+    - cần hỗ trợ
+    - cần tư vấn gấp
+    - cần hỏi gấp
+    - ơi shop
+    - ơi có ai
+    - hello shop
+    - hi shop
+    - chào web
+    - chào trang
+    - chào fanpage
+    - chào facebook
+    - chào zalo
+    - chào mess
+    - chào messenger
+    - shop ơi em hỏi
+    - cho em hỏi chút
+    - anh ơi cho hỏi
+    - chị ơi cho hỏi
+    - ad ơi
+    - shop ơi
+    - mình cần mua đồ
+    - em cần mua hàng
+    - tôi đang tìm mua
+    - mình đang tìm quà
+    - em muốn đặt hàng
+    - cho hỏi mua hàng
+    - tư vấn giúp em
+    - tư vấn giúp mình
+    - nhờ shop tư vấn
+    - cần tư vấn mua đồ
+    - cần tư vấn mua hàng
+    - em muốn tìm sản phẩm
+    - mình muốn tìm hàng
+    - tôi muốn mua đồ
+    - cho hỏi về đơn hàng
+    - hỏi thăm
+    - check in
+    - có ai online không
+    - có nhân viên không
+    - cần hỗ trợ
+    - cần support
+    - help
+    - cần giúp
+    - giúp tôi với
+    - giúp em với
+    - support
+    - hỗ trợ giúp
+    - tư vấn giúp
+    - cho tôi hỏi
+    - xin hỏi
+    - hỏi chút
+    - thắc mắc
+    - có thắc mắc
+    - cần giải đáp
+    - cần hỏi
+    - muốn hỏi
+    - định hỏi
+    - cho hỏi nhanh
+    - hỏi nhanh
+    - quick question
+    - có câu hỏi
+    - có vài câu hỏi
+    - cần tư vấn thêm
+    - tư vấn thêm
+    - nhờ tư vấn
+    - nhờ hỗ trợ
+    - làm phiền
+    - làm phiền chút
+    - phiền shop
+    - phiền ad
+    - xin phép hỏi
+    - cho phép hỏi
+    - được hỏi không
+    - có thể hỏi không
+    - hỏi được không
+    - mình hỏi được không
+    - em hỏi chút được không
+    - anh chị ơi
+    - admin ơi
+    - page ơi
+    - fanpage ơi
+    - cs ơi
+    - cs kh ơi
+    - chăm sóc khách hàng ơi
+    - hotline ơi
+    - bot ơi
+    - trợ lý ơi
+
+- intent: goodbye
+  examples: |
+    - tạm biệt
+    - bye
+    - hẹn gặp lại
+    - cảm ơn, tạm biệt
+    - goodbye
+    - see you
+    - tạm biệt nhé
+    - bye bye
+    - chào tạm biệt
+    - hẹn gặp lại sau
+    - thôi tạm biệt
+    - tôi đi đây
+    - mình đi nhé
+    - see you later
+    - see ya
+    - ciao
+    - thôi nhé
+    - tạm biệt shop
+    - hẹn gặp lại shop
+    - đi đây
+    - thôi mình đi
+    - tạm biệt nhé
+    - bye bạn
+    - goodbye bạn
+    - hẹn gặp lại
+    - lần sau gặp lại
+    - mai gặp lại
+    - hẹn lần sau
+    - thôi bye
+    - ok bye
+    - được rồi tạm biệt
+    - vậy thôi nhé
+    - hỏi xong rồi
+    - xong rồi bye
+    - cảm ơn bye
+    - thanks bye
+    - ok tạm biệt
+    - được tạm biệt
+    - thôi mình off
+    - mình đi đây
+    - đi làm đây
+    - đi học đây
+    - bận rồi bye
+    - có việc đi đây
+    - later
+    - catch you later
+    - talk later
+    - nói chuyện sau
+    - liên hệ sau
+    - bye bye nhé
+    - tạm biệt nha
+    - bye nha
+    - bái bai shop
+    - tạm biệt shop nhé
+    - hẹn gặp shop
+    - lần sau quay lại
+    - sẽ quay lại
+    - đóng chat đây
+    - thoát đây
+    - kết thúc
+    - xong việc rồi
+    - không cần nữa bye
+    - đủ rồi tạm biệt
+    - đã rõ rồi bye
+    - hiểu rồi thanks bye
+    - good bye
+    - bye bye bạn
+    - chào tạm biệt nhé
+    - vậy thôi tạm biệt
+    - ok hẹn gặp lại
+    - được hẹn gặp lại
+    - bye have a good day
+    - chúc ngày tốt
+    - đi ngủ đây
+    - ngủ đây bye
+    - đêm khuya rồi bye
+    - hẹn ngày mai
+    - bye bye nha
+    - bai
+    - bai bai
+    - bi
+    - byebye
+    - goodnight
+    - chúc ngủ ngon bye
+    - tối rồi đi ngủ bye
+    - đến đây thôi
+    - dừng ở đây
+    - kết thúc chat
+    - kết thúc ở đây
+    - không hỏi thêm nữa
+    - đủ thông tin rồi bye
+    - đã có đủ thông tin bye
+
+- intent: thanks
+  examples: |
+    - cảm ơn
+    - thanks
+    - cảm ơn bạn
+    - cảm ơn shop
+    - thank you
+    - cảm ơn nhiều
+    - cảm ơn bạn nhiều
+    - thanks a lot
+    - cảm ơn đã hỗ trợ
+    - cảm ơn nhé
+    - thanks bạn
+    - cảm ơn anh
+    - cảm ơn chị
+    - cảm ơn em
+    - thank you so much
+    - thanks so much
+    - cảm ơn rất nhiều
+    - cảm ơn shop nhiều
+    - cảm ơn đã tư vấn
+    - cảm ơn đã giúp đỡ
+    - thanks for your help
+    - cảm ơn sự hỗ trợ
+    - cám ơn
+    - cam on
+    - cam on ban
+    - cam on shop
+    - tks
+    - tks bạn
+    - tks shop
+    - thank you very much
+    - cảm ơn đã nhiệt tình
+    - cảm ơn đã hỗ trợ nhanh
+    - cảm ơn đã trả lời
+    - cảm ơn thông tin
+    - cảm ơn đã giải đáp
+    - cảm ơn đã tư vấn kỹ
+    - rất cảm ơn
+    - vô cùng cảm ơn
+    - cảm ơn rất nhiều ạ
+    - em cảm ơn
+    - em cảm ơn ạ
+    - con cảm ơn
+    - mình cảm ơn
+    - tôi cảm ơn
+    - cảm ơn anh
+    - cảm ơn chị ạ
+    - cảm ơn ad
+    - cảm ơn page
+    - cảm ơn đã giúp
+    - thanks đã giúp
+    - ok cảm ơn
+    - được cảm ơn
+    - hiểu rồi cảm ơn
+    - rõ rồi cảm ơn
+    - đã rõ cảm ơn
+    - cảm ơn đã giải thích
+    - cảm ơn thông tin hữu ích
+    - helpful thanks
+    - very helpful thank you
+    - great thanks
+    - perfect thanks
+    - exactly what I needed thanks
+    - đúng cái mình cần cảm ơn
+    - đúng thông tin mình cần cảm ơn
+    - cảm ơn đã phản hồi nhanh
+    - cảm ơn đã trả lời kịp thời
+    - appreciate it
+    - much appreciated
+    - grateful
+    - biết ơn
+    - cảm kích
+    - cảm ơn nhiều lắm
+    - cảm ơn vô cùng
+    - ty
+    - thks
+    - thank
+    - merci
+    - gracias
+    - cảm ơn nhé
+    - thanks nhé
+    - cảm ơn nha
+    - thanks nha
+    - ok thanks
+    - ok thank you
+    - được thanks
+    - good thanks
+    - tuyệt cảm ơn
+    - hay quá cảm ơn
+    - hữu ích cảm ơn
+    - rất hữu ích cảm ơn
+    - cảm ơn đã nhiệt tình hỗ trợ
+    - cảm ơn đội ngũ
+    - cảm ơn shop đã hỗ trợ
+    - cảm ơn đã reply
+    - cảm ơn đã phản hồi
+    - quick response thanks
+    - fast reply thanks
+    - cảm ơn đã trả lời sớm
+
+- intent: affirm
+  examples: |
+    - có
+    - đúng
+    - đúng rồi
+    - yes
+    - ok
+    - được
+    - đồng ý
+    - chắc chắn
+    - tất nhiên
+    - ừ
+    - oke
+    - okie
+    - yeah
+    - yep
+    - đúng vậy
+    - chính xác
+    - đúng thế
+    - phải
+    - phải rồi
+    - đúng đấy
+    - uh huh
+    - uhm
+    - vâng
+    - dạ
+    - dạ vâng
+    - đúng đúng
+    - phải phải
+    - ừ ừ
+    - ok ok
+    - được được
+    - ổn
+    - ổn mà
+    - ổn rồi
+    - fine
+    - good
+    - perfect
+    - tuyệt
+    - hay
+    - đúng rồi đúng rồi
+    - chính xác rồi
+    - đúng vậy đúng vậy
+    - đúng thế đúng thế
+    - phải rồi phải rồi
+    - yeah yeah
+    - yep yep
+    - sure
+    - of course
+    - definitely
+    - absolutely
+    - chắc chắn rồi
+    - tất nhiên rồi
+    - đương nhiên
+    - hiển nhiên
+    - đúng như vậy
+    - đúng như bạn nói
+    - đúng như shop nói
+    - mình đồng ý
+    - tôi đồng ý
+    - em đồng ý
+    - đồng ý với bạn
+    - hợp lý
+    - có lý
+    - đúng rồi có
+    - vâng có
+    - dạ có
+    - ừ có
+    - ok có
+    - được có
+    - yes có
+    - chính xác
+    - exact
+    - right
+    - correct
+    - true
+    - đúng
+    - phải
+    - chuẩn
+    - chuẩn rồi
+    - chuẩn luôn
+    - ok chuẩn
+    - được chuẩn
+    - không vấn đề gì
+    - ổn mà
+    - no problem
+    - that's right
+    - that's correct
+    - you're right
+    - đúng như ý mình
+    - đúng cái mình cần
+    - đúng thông tin mình cần
+    - hợp ý mình
+    - ưng ý
+    - ưng
+    - ừm
+    - ờ
+    - ừa
+    - uh huh
+    - mm hmm
+    - đúng rùi
+    - đúng ròi
+    - đúng roi
+    - okela
+    - okey
+    - oke luôn
+    - ok luôn
+    - được luôn
+    - yes sir
+    - yes maam
+    - dạ vâng ạ
+    - vâng ạ
+    - dạ đúng ạ
+    - vâng đúng ạ
+
+- intent: deny
+  examples: |
+    - không
+    - không phải
+    - no
+    - không đúng
+    - sai rồi
+    - không cần
+    - thôi
+    - không muốn
+    - ko
+    - k
+    - nope
+    - không phải vậy
+    - sai
+    - không đồng ý
+    - không được
+    - không ổn
+    - chưa
+    - chưa được
+    - thôi không
+    - thôi đừng
+    - không cần nữa
+    - bỏ qua
+    - không không
+    - không đâu
+    - không phải đâu
+    - sai rồi sai rồi
+    - không đúng đâu
+    - không phải thế
+    - không phải như vậy
+    - không đúng như vậy
+    - không đúng ý mình
+    - không phải cái mình cần
+    - không ổn
+    - chưa ổn
+    - chưa đúng
+    - chưa phải
+    - wrong
+    - incorrect
+    - false
+    - not really
+    - not exactly
+    - not quite
+    - không hẳn
+    - không hoàn toàn
+    - không đúng lắm
+    - không phải vậy
+    - không đúng vậy
+    - không phải như thế
+    - không như vậy
+    - không đúng
+    - sai
+    - sai rồi
+    - sai òi
+    - sai roi
+    - không muốn
+    - không cần
+    - thôi
+    - thôi đi
+    - thôi không cần
+    - thôi bỏ đi
+    - bỏ đi
+    - skip
+    - bỏ qua đi
+    - không quan tâm
+    - không cần đâu
+    - không cần thiết
+    - không cần nữa
+    - đủ rồi không cần
+    - không hỏi nữa
+    - không muốn biết
+    - không quan trọng
+    - không cần biết
+    - never mind
+    - forget it
+    - không sao
+    - không cần giải thích
+    - thôi không cần
+    - thôi bỏ qua
+    - thôi không hỏi nữa
+    - đổi chủ đề
+    - hỏi cái khác
+    - hỏi việc khác
+    - không phải câu hỏi này
+    - mình hỏi cái khác
+    - tôi hỏi cái khác
+    - không đúng chủ đề
+    - lệch chủ đề rồi
+    - không phải ý mình
+    - hiểu nhầm rồi
+    - không phải vậy
+    - ý mình không phải thế
+    - mình không hỏi cái đó
+    - không phải cái mình hỏi
+    - nhầm rồi
+    - nhầm
+    - không đúng câu hỏi
+    - reject
+    - decline
+    - từ chối
+    - không đồng ý
+    - không ưng ý
+    - không hợp
+    - không phù hợp
+    - không ok
+    - không được
+    - chưa được
+    - chưa ổn
+    - chưa hợp lý
+    - không hợp lý
+    - không ổn
+    - không ổn lắm
+    - hông
+    - hong
+    - khong
+    - kg
+    - ko cần
+    - k cần
+    - no thanks
+    - no thank you
+    - không cảm ơn
+    - thôi không cần đâu
+    - không cần đâu ạ
+    - dạ không ạ
+    - không ạ
+    - vâng không ạ
+
+- intent: bot_challenge
+  examples: |
+    - bạn là ai
+    - bạn là bot à
+    - bạn là người hay máy
+    - bạn là gì
+    - are you a bot
+    - bạn là chatbot à
+    - bạn là robot à
+    - bạn là con người không
+    - bạn là AI à
+    - bạn là trí tuệ nhân tạo à
+    - tên bạn là gì
+    - bạn tên gì
+    - giới thiệu về bạn
+    - bạn làm được gì
+    - bạn có thể giúp gì
+    - bạn hỗ trợ những gì
+    - bạn là trợ lý à
+    - bạn là nhân viên không
+    - bạn có phải người thật không
+    - ai đang chat với tôi
+    - đây là bot hay người
+    - có phải máy đang trả lời không
+    - bạn có thể làm gì cho tôi
+    - chức năng của bạn là gì
+    - bạn giúp được gì
+    - bạn biết những gì
+    - bạn trả lời được câu hỏi gì
+    - bạn có thông minh không
+    - bạn có hiểu tiếng việt không
+    - bạn hoạt động 24/7 à
+    - bạn có nghỉ không
+    - mình đang nói chuyện với ai
+    - đối tác chat là ai
+    - ai đang hỗ trợ mình
+    - bạn tên gì nhỉ
+    - cho hỏi bạn là gì
+    - bạn là hệ thống tự động à
+    - bạn là phần mềm à
+    - bạn có phải chatbot không
+    - bạn có phải trợ lý ảo không
+    - trợ lý ảo là bạn à
+    - virtual assistant là bạn à

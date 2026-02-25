@@ -1,0 +1,410 @@
+# =============================================================================
+# Prometheus Configuration for gRPC Microservices
+# =============================================================================
+# File: prometheus.yml
+# Description: Cấu hình Prometheus để scrape metrics từ các gRPC microservice
+# Usage: docker run -d -p 9090:9090 -v $(pwd)/prometheus.yml:/etc/prometheus/prometheus.yml prom/prometheus
+#
+# Các microservice cần expose port metrics theo định dạng:
+#   - gRPC service: Port + 1 (vd: 50051 -> 50052)
+#   - HTTP health: /health, /metrics
+# =============================================================================
+
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+  external_labels:
+    cluster: 'production'
+    environment: 'docker'
+    project: 'my-rasa-bot'
+    monitoring: 'prometheus'
+
+# Alertmanager configuration
+alerting:
+  alertmanagers:
+    - static_configs:
+        - targets:
+            # Thay đổi alertmanager URL khi triển khai
+            - alertmanager:9093
+
+# Rule files to load
+rule_files:
+  # - "alerts/*.yml"
+  # - "rules/*.yml"
+
+# =============================================================================
+# SCRAPE CONFIGURATIONS
+# =============================================================================
+
+scrape_configs:
+  # -------------------------------------------------------------------------
+  # Prometheus Self-Monitoring
+  # -------------------------------------------------------------------------
+  - job_name: 'prometheus'
+    static_configs:
+      - targets: ['localhost:9090']
+        labels:
+          service: 'prometheus'
+          type: 'monitoring'
+
+  # -------------------------------------------------------------------------
+  # Rasa Open Source (Chatbot Service)
+  # -------------------------------------------------------------------------
+  - job_name: 'rasa-action-server'
+    scrape_interval: 10s
+    static_configs:
+      - targets: ['action-server:5055']
+        labels:
+          service: 'rasa-actions'
+          type: 'chatbot'
+          component: 'action-server'
+    metrics_path: '/metrics'
+
+  - job_name: 'rasa-duckling'
+    scrape_interval: 30s
+    static_configs:
+      - targets: ['duckling:8000']
+        labels:
+          service: 'rasa-duckling'
+          type: 'nlp'
+          component: 'ner'
+    metrics_path: '/metrics'
+
+  # -------------------------------------------------------------------------
+  # gRPC Microservices - Product Service
+  # -------------------------------------------------------------------------
+  - job_name: 'grpc-product-service'
+    scrape_interval: 10s
+    static_configs:
+      - targets: ['product-service:50051']
+        labels:
+          service: 'product-service'
+          type: 'grpc'
+          component: 'product'
+          version: 'v1'
+          team: 'backend'
+    metrics_path: '/metrics'
+    scheme: 'http'
+
+  # -------------------------------------------------------------------------
+  # gRPC Microservices - Order Service
+  # -------------------------------------------------------------------------
+  - job_name: 'grpc-order-service'
+    scrape_interval: 10s
+    static_configs:
+      - targets: ['order-service:50051']
+        labels:
+          service: 'order-service'
+          type: 'grpc'
+          component: 'order'
+          version: 'v1'
+          team: 'backend'
+    metrics_path: '/metrics'
+    scheme: 'http'
+
+  # -------------------------------------------------------------------------
+  # gRPC Microservices - User Service
+  # -------------------------------------------------------------------------
+  - job_name: 'grpc-user-service'
+    scrape_interval: 10s
+    static_configs:
+      - targets: ['user-service:50051']
+        labels:
+          service: 'user-service'
+          type: 'grpc'
+          component: 'user'
+          version: 'v1'
+          team: 'backend'
+    metrics_path: '/metrics'
+    scheme: 'http'
+
+  # -------------------------------------------------------------------------
+  # gRPC Microservices - Payment Service
+  # -------------------------------------------------------------------------
+  - job_name: 'grpc-payment-service'
+    scrape_interval: 10s
+    static_configs:
+      - targets: ['payment-service:50051']
+        labels:
+          service: 'payment-service'
+          type: 'grpc'
+          component: 'payment'
+          version: 'v1'
+          team: 'backend'
+    metrics_path: '/metrics'
+    scheme: 'http'
+
+  # -------------------------------------------------------------------------
+  # gRPC Microservices - Notification Service
+  # -------------------------------------------------------------------------
+  - job_name: 'grpc-notification-service'
+    scrape_interval: 15s
+    static_configs:
+      - targets: ['notification-service:50051']
+        labels:
+          service: 'notification-service'
+          type: 'grpc'
+          component: 'notification'
+          version: 'v1'
+          team: 'backend'
+    metrics_path: '/metrics'
+    scheme: 'http'
+
+  # -------------------------------------------------------------------------
+  # gRPC Microservices - Inventory Service
+  # -------------------------------------------------------------------------
+  - job_name: 'grpc-inventory-service'
+    scrape_interval: 15s
+    static_configs:
+      - targets: ['inventory-service:50051']
+        labels:
+          service: 'inventory-service'
+          type: 'grpc'
+          component: 'inventory'
+          version: 'v1'
+          team: 'backend'
+    metrics_path: '/metrics'
+    scheme: 'http'
+
+  # -------------------------------------------------------------------------
+  # gRPC Microservices - Shipping Service
+  # -------------------------------------------------------------------------
+  - job_name: 'grpc-shipping-service'
+    scrape_interval: 15s
+    static_configs:
+      - targets: ['shipping-service:50051']
+        labels:
+          service: 'shipping-service'
+          type: 'grpc'
+          component: 'shipping'
+          version: 'v1'
+          team: 'backend'
+    metrics_path: '/metrics'
+    scheme: 'http'
+
+  # -------------------------------------------------------------------------
+  # gRPC Microservices - Review Service
+  # -------------------------------------------------------------------------
+  - job_name: 'grpc-review-service'
+    scrape_interval: 15s
+    static_configs:
+      - targets: ['review-service:50051']
+        labels:
+          service: 'review-service'
+          type: 'grpc'
+          component: 'review'
+          version: 'v1'
+          team: 'backend'
+    metrics_path: '/metrics'
+    scheme: 'http'
+
+  # -------------------------------------------------------------------------
+  # gRPC Microservices - Search Service
+  # -------------------------------------------------------------------------
+  - job_name: 'grpc-search-service'
+    scrape_interval: 10s
+    static_configs:
+      - targets: ['search-service:50051']
+        labels:
+          service: 'search-service'
+          type: 'grpc'
+          component: 'search'
+          version: 'v1'
+          team: 'backend'
+    metrics_path: '/metrics'
+    scheme: 'http'
+
+  # -------------------------------------------------------------------------
+  # gRPC Microservices - Recommendation Service
+  # -------------------------------------------------------------------------
+  - job_name: 'grpc-recommendation-service'
+    scrape_interval: 30s
+    static_configs:
+      - targets: ['recommendation-service:50051']
+        labels:
+          service: 'recommendation-service'
+          type: 'grpc'
+          component: 'recommendation'
+          version: 'v1'
+          team: 'ai'
+    metrics_path: '/metrics'
+    scheme: 'http'
+
+  # -------------------------------------------------------------------------
+  # gRPC Microservices - Analytics Service
+  # -------------------------------------------------------------------------
+  - job_name: 'grpc-analytics-service'
+    scrape_interval: 30s
+    static_configs:
+      - targets: ['analytics-service:50051']
+        labels:
+          service: 'analytics-service'
+          type: 'grpc'
+          component: 'analytics'
+          version: 'v1'
+          team: 'data'
+    metrics_path: '/metrics'
+    scheme: 'http'
+
+  # -------------------------------------------------------------------------
+  # gRPC Microservices - Chat Service
+  # -------------------------------------------------------------------------
+  - job_name: 'grpc-chat-service'
+    scrape_interval: 15s
+    static_configs:
+      - targets: ['chat-service:50051']
+        labels:
+          service: 'chat-service'
+          type: 'grpc'
+          component: 'chat'
+          version: 'v1'
+          team: 'frontend'
+    metrics_path: '/metrics'
+    scheme: 'http'
+
+  # -------------------------------------------------------------------------
+  # API Gateway (if exists)
+  # -------------------------------------------------------------------------
+  - job_name: 'api-gateway'
+    scrape_interval: 10s
+    static_configs:
+      - targets: ['api-gateway:8000']
+        labels:
+          service: 'api-gateway'
+          type: 'gateway'
+          component: 'api'
+    metrics_path: '/metrics'
+
+  # -------------------------------------------------------------------------
+  # Database (PostgreSQL Exporter)
+  # -------------------------------------------------------------------------
+  - job_name: 'postgresql'
+    scrape_interval: 30s
+    static_configs:
+      - targets: ['postgres-exporter:9187']
+        labels:
+          service: 'postgresql'
+          type: 'database'
+          component: 'primary'
+    metrics_path: '/metrics'
+
+  # -------------------------------------------------------------------------
+  # Redis (Redis Exporter)
+  # -------------------------------------------------------------------------
+  - job_name: 'redis'
+    scrape_interval: 30s
+    static_configs:
+      - targets: ['redis-exporter:9121']
+        labels:
+          service: 'redis'
+          type: 'cache'
+          component: 'cache'
+    metrics_path: '/metrics'
+
+  # -------------------------------------------------------------------------
+  # RabbitMQ (if exists)
+  # -------------------------------------------------------------------------
+  - job_name: 'rabbitmq'
+    scrape_interval: 30s
+    static_configs:
+      - targets: ['rabbitmq-exporter:9090']
+        labels:
+          service: 'rabbitmq'
+          type: 'message-queue'
+          component: 'broker'
+    metrics_path: '/metrics'
+
+  # -------------------------------------------------------------------------
+  # Nginx (Reverse Proxy)
+  # -------------------------------------------------------------------------
+  - job_name: 'nginx'
+    scrape_interval: 15s
+    static_configs:
+      - targets: ['nginx:9113']
+        labels:
+          service: 'nginx'
+          type: 'proxy'
+          component: 'gateway'
+    metrics_path: '/metrics'
+
+  # -------------------------------------------------------------------------
+  # Node Exporter (System Metrics)
+  # -------------------------------------------------------------------------
+  - job_name: 'node'
+    scrape_interval: 15s
+    static_configs:
+      - targets: ['node-exporter:9100']
+        labels:
+          service: 'node-exporter'
+          type: 'system'
+          component: 'monitoring'
+
+  # -------------------------------------------------------------------------
+  # Cadvisor (Container Metrics)
+  # -------------------------------------------------------------------------
+  - job_name: 'cadvisor'
+    scrape_interval: 30s
+    static_configs:
+      - targets: ['cadvisor:8080']
+        labels:
+          service: 'cadvisor'
+          type: 'container'
+          component: 'monitoring'
+    metrics_path: '/metrics'
+
+
+# =============================================================================
+# SERVICE DISCOVERY (Optional - for dynamic services)
+# =============================================================================
+# Uncomment and configure for dynamic service discovery (Kubernetes, Consul, etc.)
+
+# kubernetes_sd_configs:
+#   - role: pod
+#     api_server: https://kubernetes.default.svc:443
+#     tls_config:
+#       ca_file: /var/run/secrets/kubernetes.io/serviceaccount/ca.crt
+#     bearer_token_file: /var/run/secrets/kubernetes.io/serviceaccount/token
+#     namespaces:
+#       names:
+#         - default
+#         - production
+#   relabel_configs:
+#     - source_labels: [__meta_kubernetes_pod_annotation_prometheus_io_scrape]
+#       action: keep
+#       regex: true
+#     - source_labels: [__meta_kubernetes_pod_annotation_prometheus_io_path]
+#       action: replace
+#       target_label: __metrics_path__
+#       regex: (.+)
+#     - source_labels: [__meta_kubernetes_pod_name, __meta_kubernetes_pod_namespace]
+#       action: replace
+#       regex: ([^.]+).*
+#       replacement: ${1}
+#       target_label: pod
+
+
+# =============================================================================
+# REMOTE WRITE (Optional - for long-term storage)
+# =============================================================================
+# remote_write:
+#   - url: https://prometheus.example.com/api/v1/write
+#     tls_config:
+#       ca_file: /etc/prometheus/certs/ca.crt
+#       cert_file: /etc/prometheus/certs/client.crt
+#       key_file: /etc/prometheus/certs/client.key
+#     queue_config:
+#       capacity: 10000
+#       max_shards: 5
+#       min_shards: 1
+#       max_samples_per_send: 500
+#       batch_send_deadline: 5s
+
+
+# =============================================================================
+# REMOTE READ (Optional)
+# =============================================================================
+# remote_read:
+#   - url: https://prometheus.example.com/api/v1/read
+#     tls_config:
+#       ca_file: /etc/prometheus/certs/ca.crt
+#     read_recent: true

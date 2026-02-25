@@ -1,0 +1,309 @@
+version: "3.1"
+
+nlu:
+- intent: payment_methods
+  examples: |
+    - thanh toán như thế nào
+    - có thanh toán online không
+    - thanh toán khi nhận hàng
+    - có nhận momo không
+    - phương thức thanh toán
+    - thanh toán bằng gì
+    - có vnpay không
+    - có zalopay không
+    - thanh toán cod
+    - chuyển khoản được không
+    - thanh toán thế nào
+    - hình thức thanh toán
+    - có nhận thẻ tín dụng không
+    - thanh toán qua ngân hàng
+    - thanh toán ví điện tử
+    - có paypal không
+    - thanh toán trực tuyến
+    - thanh toán qua app
+    - có trả góp không
+    - trả góp 0%
+    - mua trả góp
+    - thanh toán qua thẻ
+    - quẹt thẻ được không
+    - có nhận tiền mặt không
+    - thanh toán khi giao hàng
+    - ship cod
+    - thanh toán an toàn không
+    - bảo mật thanh toán
+    - có thanh toán trả góp không
+    - trả góp bao nhiêu tháng
+    - điều kiện trả góp
+
+- intent: shipping_info
+  examples: |
+    - giao hàng mất bao lâu
+    - thời gian vận chuyển
+    - khi nào nhận được hàng
+    - ship bao lâu
+    - giao hàng trong bao lâu
+    - bao giờ có hàng
+    - thời gian giao hàng
+    - mất bao lâu để nhận hàng
+    - vận chuyển bao lâu
+    - ship mất mấy ngày
+    - giao hàng mấy ngày
+    - bao lâu thì đến
+    - khi nào giao
+    - dự kiến giao hàng
+    - thời gian ship
+    - giao hàng nhanh không
+    - có giao hàng tận nơi không
+    - giao hàng toàn quốc không
+    - ship tỉnh được không
+    - giao hàng ở xa được không
+    - có giao hàng ngoại thành không
+    - ship nội thành
+    - giao hàng trong ngày
+    - giao hàng hỏa tốc
+    - ship nhanh
+    - giao hàng express
+    - giao hàng nhanh nhất mấy ngày
+    - có giao hàng nhanh không
+    - giao hàng chậm nhất bao lâu
+
+- intent: shipping_fee
+  examples: |
+    - phí ship bao nhiêu
+    - phí vận chuyển
+    - có miễn phí ship không
+    - ship hết bao nhiêu
+    - giá ship
+    - phí giao hàng
+    - có free ship không
+    - miễn phí vận chuyển
+    - phí ship là bao nhiêu
+    - tính phí ship thế nào
+    - ship tốn bao nhiêu tiền
+    - phí vận chuyển bao nhiêu
+    - có tính phí ship không
+    - ship có tốn tiền không
+    - phí giao hàng là bao nhiêu
+    - miễn phí giao hàng không
+    - freeship không
+    - điều kiện freeship
+    - mua bao nhiêu thì freeship
+    - đơn hàng bao nhiêu thì miễn phí ship
+    - phí ship tỉnh
+    - phí ship ngoại thành
+    - phí ship nội thành
+    - ship xa tốn bao nhiêu
+    - phí ship tính theo gì
+    - phí ship có đắt không
+
+- intent: warranty_info
+  examples: |
+    - bảo hành bao lâu
+    - chính sách bảo hành
+    - bảo hành như thế nào
+    - thời gian bảo hành
+    - có bảo hành không
+    - bảo hành ở đâu
+    - warranty
+    - bảo hành chính hãng
+    - bảo hành điện tử
+    - bảo hành toàn quốc
+    - trung tâm bảo hành
+    - địa chỉ bảo hành
+    - bảo hành mấy tháng
+    - bảo hành mấy năm
+    - điều kiện bảo hành
+    - quy định bảo hành
+    - thủ tục bảo hành
+    - làm sao để bảo hành
+    - bảo hành có mất phí không
+    - bảo hành miễn phí không
+    - bảo hành 1 đổi 1
+    - bảo hành đổi mới
+    - bảo hành tận nhà
+    - gửi bảo hành thế nào
+    - bảo hành có nhanh không
+    - bảo hành mất bao lâu
+    - bảo hành có đổi máy mới không
+    - bảo hành có sửa chữa không
+    - điều kiện để được bảo hành
+    - hàng nào được bảo hành
+    - bảo hành có cần hóa đơn không
+    - bảo hành có cần phiếu bảo hành không
+
+- intent: return_policy
+  examples: |
+    - chính sách đổi trả
+    - đổi trả trong bao lâu
+    - có được đổi không
+    - quy định đổi trả
+    - điều kiện đổi trả
+    - đổi hàng như thế nào
+    - return policy
+    - đổi trả thế nào
+    - có đổi size không
+    - đổi màu được không
+    - đổi sản phẩm khác được không
+    - trả hàng có được không
+    - hoàn tiền thế nào
+    - đổi trả trong mấy ngày
+    - thời gian đổi trả
+    - đổi trả có mất phí không
+    - miễn phí đổi trả không
+    - điều kiện để đổi hàng
+    - trường hợp nào được đổi trả
+    - đổi trả khi nào
+    - làm sao để đổi trả
+    - thủ tục đổi trả
+    - quy trình đổi trả
+    - chính sách hoàn trả
+    - hoàn trả hàng
+    - trả lại hàng
+    - đổi lại hàng
+    - đổi hàng được không
+    - có được trả hàng không
+    - có được hoàn tiền không
+    - hoàn tiền trong bao lâu
+    - refund policy
+    - chính sách refund
+    - quy định hoàn tiền
+    - điều kiện hoàn tiền
+    - khi nào được hoàn tiền
+    - trường hợp nào được hoàn tiền
+    - hoàn tiền như thế nào
+    - làm sao để hoàn tiền
+    - thủ tục hoàn tiền
+    - quy trình hoàn tiền
+    - đổi size quần áo
+    - đổi size giày
+    - đổi màu sản phẩm
+    - đổi model khác
+    - đổi sang sản phẩm khác
+    - đổi sang hàng khác
+    - đổi sang màu khác
+    - đổi sang size khác
+    - đổi hàng lỗi
+    - đổi hàng sai
+    - đổi hàng không đúng
+    - đổi hàng không vừa
+    - đổi hàng không ưng
+    - đổi hàng không phù hợp
+    - đổi hàng không đúng mô tả
+    - đổi hàng khác với quảng cáo
+    - đổi hàng bị lỗi
+    - đổi hàng bị hỏng
+    - đổi hàng bị thiếu
+    - đổi hàng bị sai
+    - đổi hàng không đúng size
+    - đổi hàng không đúng màu
+    - đổi hàng không đúng model
+    - đổi hàng giao sai
+    - đổi hàng nhầm
+    - đổi hàng không như mong đợi
+    - đổi hàng không như hình
+    - đổi hàng khác với hình ảnh
+    - đổi hàng chất lượng kém
+    - đổi hàng không đạt chất lượng
+    - đổi hàng bị lỗi kỹ thuật
+    - đổi hàng không hoạt động
+    - đổi hàng không dùng được
+    - đổi hàng hết hạn sử dụng
+    - đổi hàng gần hết hạn
+    - đổi hàng không còn mới
+    - đổi hàng đã qua sử dụng
+    - đổi hàng không còn nguyên seal
+    - đổi hàng thiếu phụ kiện
+    - đổi hàng không đầy đủ
+    - đổi hàng thiếu hộp
+    - đổi hàng thiếu tem
+    - đổi hàng không có hóa đơn
+    - đổi hàng mất hóa đơn
+    - đổi hàng không có phiếu bảo hành
+    - đổi hàng quá thời hạn
+    - đổi hàng sau 7 ngày
+    - đổi hàng sau 30 ngày
+    - đổi hàng trong vòng bao lâu
+    - thời hạn đổi hàng
+    - hạn đổi hàng
+    - deadline đổi hàng
+    - đổi hàng có giới hạn không
+    - đổi hàng có điều kiện gì
+    - đổi hàng cần gì
+    - đổi hàng cần giấy tờ gì
+    - đổi hàng cần hóa đơn không
+    - đổi hàng cần phiếu bảo hành không
+    - đổi hàng cần giữ nguyên seal không
+    - đổi hàng cần đầy đủ phụ kiện không
+    - đổi hàng có mất phí không
+    - đổi hàng có tốn tiền không
+    - phí đổi hàng
+    - chi phí đổi hàng
+    - ai trả phí đổi hàng
+    - shop trả phí đổi hàng không
+    - khách trả phí đổi hàng không
+    - đổi hàng miễn phí không
+    - đổi hàng free không
+    - đổi hàng không mất phí không
+    - đổi hàng có được hoàn tiền không
+    - đổi hàng không được thì hoàn tiền
+    - không đổi được thì hoàn tiền
+    - hoàn tiền 100% không
+    - hoàn tiền đầy đủ không
+    - hoàn tiền một phần
+    - hoàn tiền toàn bộ
+    - hoàn tiền về đâu
+    - hoàn tiền về tài khoản nào
+    - hoàn tiền về ví nào
+    - hoàn tiền về thẻ nào
+    - hoàn tiền về momo
+    - hoàn tiền về vnpay
+    - hoàn tiền về ngân hàng
+    - hoàn tiền về tài khoản đã thanh toán
+    - hoàn tiền về ví đã thanh toán
+    - hoàn tiền về thẻ đã thanh toán
+    - hoàn tiền mất bao lâu
+    - hoàn tiền trong mấy ngày
+    - thời gian hoàn tiền
+    - bao lâu nhận được tiền hoàn
+    - khi nào nhận được tiền hoàn
+    - hoàn tiền tự động không
+    - hoàn tiền thủ công
+    - hoàn tiền cần làm gì
+    - hoàn tiền cần thủ tục gì
+    - hoàn tiền cần giấy tờ gì
+    - hoàn tiền cần đơn không
+    - hoàn tiền cần liên hệ không
+    - cách hoàn tiền
+    - cách đổi hàng
+    - cách trả hàng
+    - cách đổi trả
+    - cách hoàn trả
+    - hướng dẫn đổi hàng
+    - hướng dẫn hoàn tiền
+    - hướng dẫn trả hàng
+    - hướng dẫn đổi trả
+    - hướng dẫn hoàn trả
+    - quy trình đổi hàng
+    - quy trình hoàn tiền
+    - quy trình trả hàng
+    - bước đổi hàng
+    - bước hoàn tiền
+    - bước trả hàng
+    - đổi hàng online
+    - đổi hàng offline
+    - đổi hàng tại cửa hàng
+    - đổi hàng tại nhà
+    - đổi hàng gửi về shop
+    - đổi hàng ship lại
+    - đổi hàng có ship không
+    - đổi hàng có giao không
+    - chính sách mua bán
+    - quy định mua hàng
+    - điều kiện mua hàng
+    - điều khoản mua hàng
+    - terms of sale
+    - purchase policy
+    - terms and conditions
+    - điều khoản và điều kiện
+    - quy định chung
+    - chính sách chung

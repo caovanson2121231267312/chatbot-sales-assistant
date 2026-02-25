@@ -1,0 +1,821 @@
+version: "3.1"
+
+nlu:
+- intent: product_search
+  examples: |
+    - tìm [điện thoại](product_type)
+    - có [điện thoại](product_type) nào
+    - tìm [iphone](product_name)
+    - cho tôi xem [laptop](product_type)
+    - có [macbook](product_name) không
+    - tìm sản phẩm [apple](brand)
+    - [điện thoại samsung](product_name)
+    - tìm [tai nghe](product_type)
+    - có [airpods](product_name) không
+    - tìm [đồng hồ thông minh](product_type)
+    - cho xem [ipad](product_type)
+    - tìm [phụ kiện](product_type)
+    - có [sạc dự phòng](product_type) không
+    - tìm [ốp lưng](product_type)
+    - [máy tính bảng](product_type)
+    - tìm [điện thoại iphone](product_name)
+    - có [samsung galaxy](product_name) không
+    - cho xem [macbook pro](product_name)
+    - tìm [apple watch](product_name)
+    - [laptop dell](product_name)
+    - tìm [tai nghe bluetooth](product_type)
+    - có [chuột không dây](product_type) không
+    - tìm [bàn phím](product_type)
+    - [màn hình](product_type)
+    - tìm [iphone 15](product_name)
+    - [samsung s24](product_name)
+    - tìm [điện thoại giá rẻ](product_type)
+    - [laptop gaming](product_type)
+    - tìm [điện thoại chụp ảnh đẹp](product_type)
+    - có [điện thoại pin trâu](product_type) không
+    - tìm [laptop mỏng nhẹ](product_type)
+    - [điện thoại cao cấp](product_type)
+    - tìm [sản phẩm mới](product_type)
+    - có [hàng mới về](product_type) không
+    - cho xem [sản phẩm hot](product_type)
+    - tìm [sản phẩm bán chạy](product_type)
+    - [điện thoại flagship](product_type)
+
+- intent: product_price
+  examples: |
+    - giá [iphone 15](product_name) bao nhiêu
+    - [iphone 15](product_name) giá bao nhiêu
+    - giá [macbook](product_name)
+    - bao nhiêu tiền
+    - giá cả như thế nào
+    - [samsung s24](product_name) giá bao nhiêu
+    - giá của [airpods](product_name)
+    - [laptop dell](product_name) giá bao nhiêu
+    - hỏi giá [ipad](product_name)
+    - giá [apple watch](product_name)
+    - giá sản phẩm này
+    - giá bao nhiêu vậy
+    - giá thế nào
+    - giá [iphone 15 pro max](product_name)
+    - [macbook pro m3](product_name) giá bao nhiêu
+    - hỏi giá [samsung galaxy s24 ultra](product_name)
+    - giá [airpods pro 2](product_name) là bao nhiêu
+    - [ipad pro](product_name) giá bao nhiêu
+    - giá [apple watch series 9](product_name)
+    - giá [điện thoại](product_type) này
+    - [laptop](product_type) này giá bao nhiêu
+    - giá [tai nghe](product_type) này là bao nhiêu
+    - hỏi giá cả
+    - cho biết giá
+    - giá niêm yết
+    - giá bán
+    - giá khuyến mãi
+    - giá sale
+    - giá ưu đãi
+    - giá hiện tại
+    - giá mới nhất
+    - [iphone 14](product_name) bao nhiêu tiền
+    - [samsung s23](product_name) giá thế nào
+    - [macbook air](product_name) bao nhiêu
+    - [airpods](product_name) mấy tiền
+    - [ipad](product_name) giá bao nhiêu
+    - mấy tiền [iphone 15](product_name)
+    - [laptop](product_type) này bao nhiêu
+    - [điện thoại](product_type) này mấy tiền
+    - giá [xiaomi](product_name)
+    - [oppo](product_name) bao nhiêu
+    - [vivo](product_name) giá
+    - hỏi giá [realme](product_name)
+    - cho biết giá [samsung](product_name)
+    - giá bán [iphone](product_name)
+    - giá niêm yết [macbook](product_name)
+    - giá gốc
+    - giá đặc biệt
+    - giá tốt nhất
+    - giá rẻ nhất
+    - giá thấp nhất
+    - có giảm giá không
+    - đang giảm giá không
+    - giá có giảm không
+    - có sale không
+    - giá [bản 256gb](storage)
+    - [màu đen](color) giá bao nhiêu
+    - giá [128gb](storage)
+    - [512gb](storage) giá mấy
+    - giá từng bản
+    - giá từng dung lượng
+    - so sánh giá
+    - giá có đắt không
+    - giá có rẻ không
+    - giá hợp lý không
+    - có đắt không
+    - có rẻ không
+    - đắt không
+    - rẻ không
+    - mắc không
+    - giá cả
+    - price
+    - how much
+    - cost
+    - giá trị
+    - trị giá
+    - bao nhiêu một cái
+    - một cái bao nhiêu
+    - 1 cái giá bao nhiêu
+    - unit price
+    - giá từng cái
+    - giá mỗi cái
+    - giá 1 máy
+    - 1 máy bao nhiêu
+    - giá trọn bộ
+    - có phụ phí không
+    - giá đã bao gồm thuế chưa
+    - giá đã gồm ship chưa
+    - giá cuối cùng
+    - tổng giá
+    - giá tổng
+    - giá sau giảm
+    - giá sau khuyến mãi
+    - giá áp dụng mã giảm
+    - giá khi dùng voucher
+    - giá khi có coupon
+    - giá thành
+    - giá vốn
+    - giá gốc bao nhiêu
+    - giá trước giảm
+    - giá gốc trước sale
+    - discount price
+    - sale price
+    - original price
+    - giá cũ
+    - giá mới
+    - giá mới nhất hiện tại
+    - cập nhật giá
+    - giá mới cập nhật
+    - giá hôm nay
+    - giá tháng này
+    - giá quý này
+    - giá năm nay
+
+- intent: product_availability
+  examples: |
+    - còn hàng không
+    - có sẵn hàng không
+    - kiểm tra tồn kho
+    - [iphone 15](product_name) còn không
+    - còn [màu đen](color) không
+    - còn [256gb](storage) không
+    - có hàng không
+    - sản phẩm này còn không
+    - [macbook](product_name) còn hàng không
+    - kiểm tra hàng
+    - còn [màu trắng](color) không
+    - còn [512gb](storage) không
+    - còn [màu xanh](color) không
+    - [iphone 15 pro](product_name) còn hàng không
+    - còn [bản 128gb](storage) không
+    - có sẵn [màu vàng](color) không
+    - kiểm tra tồn kho [samsung s24](product_name)
+    - [macbook pro](product_name) còn không
+    - còn [màu hồng](color) không
+    - có [màu tím](color) không
+    - còn [bản 1tb](storage) không
+    - sản phẩm này có sẵn không
+    - hàng về chưa
+    - khi nào có hàng
+    - hết hàng chưa
+    - còn hàng ở chi nhánh nào
+    - còn mấy cái
+    - còn bao nhiêu
+    - kiểm tra số lượng
+    - [iphone 14](product_name) có không
+    - [samsung](product_name) còn không
+    - [macbook](product_name) có sẵn không
+    - [airpods](product_name) còn hàng không
+    - có [màu xanh dương](color) không
+    - còn [màu bạc](color) không
+    - [64gb](storage) còn không
+    - có [bản 512gb](storage) không
+    - [2tb](storage) có không
+    - stock
+    - inventory
+    - in stock
+    - out of stock
+    - còn tồn không
+    - tồn kho bao nhiêu
+    - số lượng còn
+    - còn bao nhiêu cái
+    - còn nhiều không
+    - còn ít không
+    - sắp hết hàng chưa
+    - sắp hết chưa
+    - đã hết hàng chưa
+    - còn bán không
+    - còn bán [iphone 15](product_name) không
+    - vẫn còn [samsung s24](product_name) không
+    - [macbook](product_name) vẫn còn không
+    - nhập hàng chưa
+    - có hàng mới chưa
+    - bao giờ có hàng
+    - dự kiến có hàng khi nào
+    - hàng về khi nào
+    - nhập thêm khi nào
+    - restock khi nào
+    - đặt trước được không
+    - có thể đặt trước không
+    - pre order được không
+    - đặt hàng trước
+    - đăng ký nhận thông báo có hàng
+    - notify when in stock
+    - báo khi có hàng
+    - thông báo khi về hàng
+    - có hàng nhớ báo
+    - nhớ báo khi có hàng
+    - còn ở chi nhánh nào
+    - còn ở cửa hàng nào
+    - store nào còn
+    - branch nào còn
+    - địa điểm nào còn
+    - khu vực nào còn
+    - tỉnh nào còn
+    - thành phố nào còn
+    - còn ở hn không
+    - còn ở hcm không
+    - nội thành còn không
+    - ngoại thành còn không
+    - online còn không
+    - web còn không
+    - app còn không
+    - shop còn không
+    - cửa hàng còn không
+    - số lượng giới hạn không
+    - limited stock
+    - limited edition còn không
+    - phiên bản giới hạn còn không
+    - hàng hiếm còn không
+    - hàng độc còn không
+    - last one
+    - còn cái cuối không
+    - còn 1 cái không
+    - chỉ còn 1 2 cái
+    - còn vài cái
+    - còn ít
+    - sắp sold out
+    - sold out chưa
+    - hết chưa
+    - het hang chua
+    - con hang khong
+    - co hang khong
+    - check stock
+    - kiểm tra còn hàng
+    - verify availability
+    - xác nhận còn hàng
+    - confirm stock
+    - có sẵn để giao ngay không
+    - giao ngay được không
+    - ship ngay được không
+    - có hàng giao ngay không
+    - in stock and ready to ship
+    - available
+    - availability
+    - tình trạng hàng
+    - status hàng
+    - hàng như thế nào
+    - còn hay hết
+    - còn hay không
+
+- intent: product_specs
+  examples: |
+    - thông số kỹ thuật
+    - cấu hình
+    - pin bao nhiêu mah
+    - màn hình bao nhiêu inch
+    - ram bao nhiêu
+    - cấu hình [iphone 15](product_name)
+    - thông số [samsung s24](product_name)
+    - [macbook](product_name) có cấu hình gì
+    - cho xem thông số kỹ thuật
+    - chi tiết sản phẩm
+    - đặc điểm kỹ thuật
+    - bộ nhớ bao nhiêu
+    - thông số [iphone 15 pro max](product_name)
+    - cấu hình [macbook pro m3](product_name)
+    - [samsung galaxy s24 ultra](product_name) có thông số gì
+    - cho xem chi tiết [airpods pro](product_name)
+    - [ipad pro](product_name) có cấu hình như thế nào
+    - thông số màn hình
+    - dung lượng pin
+    - camera bao nhiêu mp
+    - chip xử lý
+    - bộ vi xử lý
+    - card đồ họa
+    - ổ cứng
+    - kích thước
+    - trọng lượng
+    - kết nối
+    - cổng sạc
+    - hệ điều hành
+    - đặc điểm nổi bật
+    - tính năng
+    - [iphone 15](product_name) có gì
+    - [samsung s24](product_name) thông số
+    - [macbook](product_name) config
+    - specs [iphone](product_name)
+    - specification
+    - technical specs
+    - tech specs
+    - chi tiết [sản phẩm](product_type)
+    - mô tả [sản phẩm](product_type)
+    - thông tin [sản phẩm](product_type)
+    - thông tin chi tiết
+    - full specs
+    - đầy đủ thông số
+    - processor
+    - cpu
+    - chip
+    - chip gì
+    - dùng chip gì
+    - chip nào
+    - bộ nhớ
+    - memory
+    - storage
+    - dung lượng
+    - capacity
+    - màn hình
+    - display
+    - screen
+    - kích thước màn hình
+    - độ phân giải
+    - resolution
+    - refresh rate
+    - tần số quét
+    - camera
+    - máy ảnh
+    - camera trước
+    - camera sau
+    - camera chính
+    - megapixel
+    - mp
+    - zoom
+    - quay video
+    - video
+    - 4k
+    - 8k
+    - pin
+    - battery
+    - dung lượng pin
+    - mah
+    - mAh
+    - thời lượng pin
+    - sạc
+    - charging
+    - sạc nhanh
+    - fast charging
+    - wireless charging
+    - sạc không dây
+    - sạc từ
+    - magsafe
+    - kết nối
+    - connectivity
+    - wifi
+    - bluetooth
+    - 5g
+    - 4g
+    - lte
+    - nfc
+    - gps
+    - cổng
+    - port
+    - usb
+    - usb c
+    - thunderbolt
+    - jack tai nghe
+    - 3.5mm
+    - không jack
+    - headphone jack
+    - sim
+    - esim
+    - dual sim
+    - 2 sim
+    - khối lượng
+    - weight
+    - trọng lượng
+    - kích thước
+    - dimension
+    - size
+    - màu sắc
+    - colors
+    - có mấy màu
+    - có những màu gì
+    - options
+    - tùy chọn
+    - variants
+    - biến thể
+    - phiên bản
+    - version
+    - model
+    - đời
+    - thế hệ
+    - generation
+    - os
+    - hệ điều hành
+    - operating system
+    - ios
+    - android
+    - windows
+    - macos
+    - ip rating
+    - chống nước
+    - water resistant
+    - dust resistant
+    - chống bụi
+    - features
+    - tính năng gì
+    - có tính năng gì
+    - highlight
+    - điểm nổi bật
+    - ưu điểm
+    - pros
+    - cons
+    - nhược điểm
+    - review
+    - đánh giá
+    - người dùng đánh giá thế nào
+    - rating
+
+- intent: product_compare
+  examples: |
+    - so sánh [iphone](product_name) và [samsung](product_name)
+    - khác nhau gì
+    - nên mua cái nào
+    - so sánh 2 sản phẩm
+    - [iphone 15](product_name) và [samsung s24](product_name) khác gì
+    - so sánh [macbook](product_name) với [dell](product_name)
+    - cái nào tốt hơn
+    - khác biệt gì
+    - so sánh giá
+    - so sánh cấu hình
+    - [iphone 15 pro](product_name) và [iphone 15 pro max](product_name) khác gì
+    - so sánh [macbook air](product_name) với [macbook pro](product_name)
+    - [samsung s24](product_name) và [samsung s24 ultra](product_name) khác nhau thế nào
+    - so sánh [airpods](product_name) với [airpods pro](product_name)
+    - [ipad air](product_name) và [ipad pro](product_name) nên chọn cái nào
+    - so sánh [apple watch](product_name) với [samsung watch](product_name)
+    - khác biệt giữa [iphone 14](product_name) và [iphone 15](product_name)
+    - nên chọn [macbook](product_name) hay [laptop dell](product_name)
+    - ưu nhược điểm
+    - điểm mạnh điểm yếu
+    - review so sánh
+    - so sánh [iphone 14](product_name) [iphone 15](product_name)
+    - [samsung](product_name) vs [iphone](product_name)
+    - [macbook](product_name) vs [dell](product_name)
+    - compare [iphone](product_name) [samsung](product_name)
+    - comparison
+    - so sánh giữa
+    - khác nhau giữa
+    - difference between
+    - khác gì
+    - khác nhau thế nào
+    - khác nhau như thế nào
+    - có gì khác
+    - có gì khác nhau
+    - giống nhau không
+    - giống hay khác
+    - giống nhau chỗ nào
+    - khác nhau chỗ nào
+    - điểm khác
+    - điểm giống
+    - same or different
+    - similar
+    - tương tự không
+    - giống nhau không
+    - cái nào đắt hơn
+    - cái nào rẻ hơn
+    - cái nào tốt hơn
+    - cái nào mạnh hơn
+    - cái nào pin trâu hơn
+    - cái nào camera đẹp hơn
+    - cái nào màn hình đẹp hơn
+    - cái nào đáng mua hơn
+    - worth it hơn
+    - đáng tiền hơn
+    - value for money
+    - nên chọn cái nào
+    - nên mua cái nào
+    - recommend cái nào
+    - gợi ý cái nào
+    - tư vấn chọn
+    - help me choose
+    - giúp chọn
+    - giúp quyết định
+    - phân vân giữa
+    - đang phân vân
+    - không biết chọn cái nào
+    - khó chọn
+    - dilemma
+    - side by side
+    - đặt cạnh nhau
+    - so sánh trực tiếp
+    - head to head
+    - versus
+    - vs
+    - so với
+    - đối chiếu
+    - contrast
+    - so sánh giá 2 cái
+    - so sánh cấu hình 2 cái
+    - so sánh pin 2 cái
+    - so sánh camera 2 cái
+    - bảng so sánh
+    - comparison table
+    - so sánh chi tiết
+    - detailed comparison
+    - full comparison
+    - đầy đủ so sánh
+    - ưu nhược điểm từng cái
+    - pros cons
+    - ưu điểm nhược điểm
+    - advantage disadvantage
+    - better
+    - tốt hơn
+    - worse
+    - kém hơn
+    - same
+    - bằng nhau
+    - ngang nhau
+    - tương đương
+    - equivalent
+    - alternative
+    - thay thế
+    - thay thế cho
+    - thay cho
+    - thay vì
+    - instead of
+    - thay vì mua [iphone](product_name) thì [samsung](product_name) thế nào
+    - [macbook air](product_name) hay [macbook pro](product_name)
+    - [ipad air](product_name) hay [ipad pro](product_name)
+    - [airpods](product_name) hay [airpods pro](product_name)
+
+- intent: product_recommend
+  examples: |
+    - gợi ý điện thoại
+    - nên mua điện thoại nào
+    - tư vấn sản phẩm
+    - điện thoại tốt nhất
+    - [laptop](product_type) nào tốt
+    - giới thiệu [điện thoại](product_type) cho tôi
+    - [điện thoại](product_type) giá rẻ
+    - [laptop](product_type) cao cấp
+    - sản phẩm nào đáng mua
+    - tư vấn [tai nghe](product_type)
+    - gợi ý [đồng hồ](product_type)
+    - [điện thoại](product_type) nào đáng mua nhất
+    - [laptop](product_type) phù hợp cho sinh viên
+    - [điện thoại](product_type) chụp ảnh đẹp
+    - [laptop](product_type) cho dân văn phòng
+    - [điện thoại](product_type) pin trâu
+    - [laptop](product_type) cho game thủ
+    - [tai nghe](product_type) chống ồn tốt
+    - [đồng hồ](product_type) thể thao
+    - gợi ý [điện thoại](product_type) tầm 10 triệu
+    - [laptop](product_type) tầm 20 triệu
+    - [điện thoại](product_type) cho người lớn tuổi
+    - [laptop](product_type) cho designer
+    - sản phẩm bán chạy
+    - sản phẩm được yêu thích
+    - top sản phẩm
+    - sản phẩm hot
+    - recommend [điện thoại](product_type)
+    - suggest [laptop](product_type)
+    - recommend [tai nghe](product_type)
+    - gợi ý [điện thoại](product_type) cho mình
+    - tư vấn [laptop](product_type) cho tôi
+    - [điện thoại](product_type) nào đáng mua
+    - [laptop](product_type) nào nên mua
+    - best [điện thoại](product_type)
+    - best [laptop](product_type)
+    - top [điện thoại](product_type)
+    - top [laptop](product_type)
+    - [điện thoại](product_type) tốt nhất 2024
+    - [laptop](product_type) tốt nhất 2024
+    - [điện thoại](product_type) hot nhất
+    - [laptop](product_type) bán chạy nhất
+    - best buy
+    - đáng mua nhất
+    - nên mua nhất
+    - [điện thoại](product_type) cho học sinh
+    - [laptop](product_type) cho sinh viên
+    - [điện thoại](product_type) cho người già
+    - [laptop](product_type) cho văn phòng
+    - [điện thoại](product_type) cho game
+    - [laptop](product_type) cho design
+    - [điện thoại](product_type) cho chụp ảnh
+    - [laptop](product_type) cho lập trình
+    - [điện thoại](product_type) cho doanh nhân
+    - [laptop](product_type) cho học online
+    - [điện thoại](product_type) pin khỏe
+    - [laptop](product_type) nhẹ
+    - [điện thoại](product_type) màn hình đẹp
+    - [laptop](product_type) cấu hình cao
+    - [điện thoại](product_type) camera đẹp
+    - [laptop](product_type) mỏng
+    - [điện thoại](product_type) giá tốt
+    - [laptop](product_type) giá rẻ
+    - [điện thoại](product_type) tầm trung
+    - [laptop](product_type) cao cấp
+    - [điện thoại](product_type) flagship
+    - [laptop](product_type) budget
+    - [điện thoại](product_type) phổ thông
+    - [laptop](product_type) phổ thông
+    - entry level
+    - mid range
+    - high end
+    - premium
+    - giá rẻ chất lượng
+    - value
+    - bang for buck
+    - đáng đồng tiền
+    - best value
+    - giá trị tốt nhất
+    - popular
+    - phổ biến
+    - trending
+    - đang hot
+    - hot nhất
+    - bestseller
+    - bán chạy
+    - best selling
+    - most popular
+    - được ưa chuộng
+    - được yêu thích
+    - customer favorite
+    - yêu thích nhất
+    - đánh giá cao
+    - highly rated
+    - top rated
+    - rating cao
+    - nhiều sao
+    - nhiều review tốt
+    - review tốt
+    - đánh giá tốt
+    - editor choice
+    - lựa chọn biên tập
+    - award
+    - giải thưởng
+    - award winning
+    - đoạt giải
+    - must buy
+    - nên mua
+    - should buy
+    - đáng sở hữu
+    - worth buying
+    - đáng mua
+    - can't go wrong
+    - không thể sai
+    - safe choice
+    - lựa chọn an toàn
+    - beginner friendly
+    - dễ dùng
+    - user friendly
+    - thân thiện người dùng
+    - cho người mới
+    - first time buyer
+    - mua lần đầu
+    - new to [điện thoại](product_type)
+    - mới dùng [laptop](product_type)
+    - chưa dùng bao giờ
+    - không biết chọn
+    - confused
+    - phân vân
+    - help me decide
+    - giúp quyết định
+    - what should I get
+    - nên lấy cái gì
+    - nên mua cái gì
+    - what to buy
+    - mua gì
+    - mua cái gì
+    - options
+    - lựa chọn
+    - choices
+    - alternatives
+    - thay thế
+    - similar products
+    - sản phẩm tương tự
+    - sản phẩm liên quan
+    - related products
+    - you may also like
+    - có thể bạn thích
+    - gợi ý thêm
+    - thêm gợi ý
+    - more suggestions
+    - other options
+    - lựa chọn khác
+    - cái khác
+    - sản phẩm khác
+    - tìm [dt](product_type)
+    - có [dt](product_type) không
+    - tìm [phone](product_type)
+    - cho xem [smartphone](product_type)
+    - có [lt](product_type) không
+    - tìm [máy tính](product_type)
+    - [notebook](product_type)
+    - tìm [tablet](product_type)
+    - có [máy tính bảng](product_type) không
+    - tìm [headphone](product_type)
+    - [earphone](product_type)
+    - [tai nghe bluetooth](product_type)
+    - tìm [watch](product_type)
+    - [smartwatch](product_type)
+    - tìm [powerbank](product_type)
+    - có [sạc](product_type) không
+    - [cáp sạc](product_type)
+    - [dây sạc](product_type)
+    - tìm [ốp](product_type)
+    - [bao da](product_type)
+    - [kính cường lực](product_type)
+    - tìm [chuột](product_type)
+    - [bàn phím](product_type)
+    - [keyboard](product_type)
+    - tìm [màn hình](product_type)
+    - [monitor](product_type)
+    - tìm [loa](product_type)
+    - [speaker](product_type)
+    - tìm [xiaomi](product_name)
+    - có [oppo](product_name) không
+    - [vivo](product_name)
+    - tìm [realme](product_name)
+    - [nokia](product_name)
+    - [sony](product_name)
+    - tìm [huawei](product_name)
+    - [oneplus](product_name)
+    - tìm [google pixel](product_name)
+    - [asus rog](product_name)
+    - [lenovo thinkpad](product_name)
+    - tìm [hp pavilion](product_name)
+    - [acer nitro](product_name)
+    - [msi gaming](product_name)
+    - tìm sản phẩm [xiaomi](brand)
+    - có hàng [oppo](brand) không
+    - sản phẩm [vivo](brand)
+    - hàng [realme](brand)
+    - [điện thoại giá rẻ](product_type) dưới 5 triệu
+    - [laptop](product_type) dưới 15 triệu
+    - [điện thoại](product_type) tầm 10 triệu
+    - [laptop](product_type) tầm 20 triệu
+    - [tai nghe](product_type) dưới 1 triệu
+    - [đồng hồ](product_type) tầm 5 triệu
+    - tìm [điện thoại chơi game](product_type)
+    - [laptop văn phòng](product_type)
+    - [laptop đồ họa](product_type)
+    - [điện thoại selfie](product_type)
+    - tìm [điện thoại màn hình lớn](product_type)
+    - [laptop màn hình cảm ứng](product_type)
+    - có [hàng nhập khẩu](product_type) không
+    - [hàng chính hãng](product_type)
+    - tìm [sản phẩm apple](brand)
+    - [hàng samsung](brand)
+    - cho xem hết [điện thoại](product_type)
+    - list [laptop](product_type)
+    - danh sách [tai nghe](product_type)
+    - show [điện thoại](product_type)
+    - hiển thị [sản phẩm](product_type)
+    - xem tất cả [điện thoại](product_type)
+    - browse [laptop](product_type)
+    - duyệt [sản phẩm](product_type)
+    - mình cần tìm [điện thoại](product_type)
+    - tôi đang tìm [laptop](product_type)
+    - đang tìm [tai nghe](product_type)
+    - muốn xem [điện thoại](product_type)
+    - muốn tìm [laptop](product_type)
+    - cần mua [điện thoại](product_type)
+    - định mua [laptop](product_type)
+    - sẽ mua [tai nghe](product_type)
+    - tìm giúp [điện thoại](product_type)
+    - giúp tìm [laptop](product_type)
+    - tư vấn [điện thoại](product_type)
+    - tư vấn giúp [laptop](product_type)
+    - recommend [điện thoại](product_type)
+    - gợi ý [laptop](product_type)
+    - nào [điện thoại](product_type) ngon
+    - [điện thoại](product_type) nào xịn
+    - [laptop](product_type) nào tốt
+    - [điện thoại](product_type) nào đáng mua
+    - có [iphone 14](product_name) không
+    - còn [iphone 13](product_name) không
+    - có [samsung s23](product_name) không
+    - [macbook air m2](product_name)
+    - [dell inspiron](product_name)
+    - [ipad mini](product_name)
+    - [apple watch ultra](product_name)
+    - [galaxy tab](product_name)
+    - [surface](product_name)
+    - [thinkpad](product_name)
+    - [razer](product_name)
+    - [logitech](product_name)
+    - [jbl](product_name)
+    - [sony wh](product_name)
+    - [bose](product_name)
+    - [anker](product_name)
+    - [ugreen](product_name)
+    - [baseus](product_name)

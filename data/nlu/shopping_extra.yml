@@ -1,0 +1,524 @@
+version: "3.1"
+
+nlu:
+- intent: ask_gift_wrap
+  examples: |
+    - gói quà được không
+    - có dịch vụ gói quà không
+    - muốn gói quà tặng
+    - gói quà tặng sinh nhật
+    - có gói quà không
+    - gói quà giúp tôi
+    - tôi muốn mua làm quà
+    - mua làm quà tặng
+    - gói quà đẹp không
+    - có hộp quà không
+    - có túi quà không
+    - thiệp kèm quà được không
+    - viết thiệp tặng kèm được không
+    - gói quà sinh nhật
+    - gói quà valentine
+    - gói quà 8/3
+    - gói quà giáng sinh
+    - gói quà tết
+    - gói quà kỷ niệm
+    - mua tặng bạn gái
+    - mua tặng bạn trai
+    - mua tặng mẹ
+    - mua tặng bố
+    - mua tặng người yêu
+    - mua tặng sếp
+    - mua tặng đồng nghiệp
+    - mua tặng bạn bè
+    - gift wrap
+    - gift box
+    - gift packaging
+    - có gói quà cao cấp không
+    - gói quà miễn phí không
+    - phí gói quà bao nhiêu
+    - gói quà mất thêm tiền không
+
+- intent: ask_gift_recommend
+  examples: |
+    - gợi ý quà tặng
+    - nên mua quà gì
+    - quà tặng sinh nhật
+    - quà tặng 8/3
+    - quà tặng valentine
+    - quà tặng giáng sinh
+    - quà tặng tết
+    - quà tặng bạn gái
+    - quà tặng bạn trai
+    - quà tặng mẹ
+    - quà tặng bố
+    - quà tặng sếp
+    - quà tặng đồng nghiệp
+    - quà tặng bạn bè
+    - quà tặng người yêu
+    - quà tặng kỷ niệm ngày cưới
+    - quà tặng tốt nghiệp
+    - quà tặng tân gia
+    - quà tặng em bé
+    - quà tặng trẻ em
+    - quà tặng người lớn tuổi
+    - quà tặng ý nghĩa
+    - quà tặng độc đáo
+    - quà tặng thiết thực
+    - quà tặng cao cấp
+    - quà tặng tầm 500k
+    - quà tặng tầm 1 triệu
+    - quà tặng tầm 2 triệu
+    - quà tặng dưới 500k
+    - quà tặng dưới 1 triệu
+    - tư vấn quà tặng
+    - gợi ý quà sinh nhật
+    - nên mua gì làm quà
+    - mua gì tặng bạn gái
+    - mua gì tặng mẹ
+    - gift ideas
+    - gift suggestion
+    - gift recommendation
+    - quà ý nghĩa
+    - quà đẹp
+    - quà hot
+
+- intent: ask_bulk_buy
+  examples: |
+    - mua sỉ được không
+    - có bán sỉ không
+    - mua số lượng lớn
+    - mua nhiều có giảm giá không
+    - giá sỉ bao nhiêu
+    - mua 10 cái giá bao nhiêu
+    - mua 20 cái có giảm không
+    - mua 50 cái giá thế nào
+    - mua 100 cái
+    - mua số lượng lớn có ưu đãi không
+    - giá bán sỉ
+    - giá wholesale
+    - wholesale price
+    - bulk order
+    - mua sỉ cho công ty
+    - mua sỉ cho doanh nghiệp
+    - mua sỉ cho trường học
+    - mua sỉ cho văn phòng
+    - đặt hàng số lượng lớn
+    - order số lượng lớn
+    - mua nhiều cái
+    - mua cả lô
+    - mua cả thùng
+    - mua cả hộp
+    - mua cả kiện
+    - giá theo số lượng
+    - chiết khấu số lượng
+    - discount theo số lượng
+    - volume discount
+    - quantity discount
+    - mua 5 cái giảm bao nhiêu
+    - mua 10 cái giảm bao nhiêu
+    - có chính sách mua sỉ không
+    - điều kiện mua sỉ
+    - tối thiểu mua bao nhiêu
+    - minimum order
+    - MOQ
+
+- intent: ask_new_arrivals
+  examples: |
+    - hàng mới về chưa
+    - có hàng mới không
+    - sản phẩm mới nhất
+    - hàng mới nhất
+    - mới về gì
+    - có gì mới không
+    - sản phẩm mới ra mắt
+    - hàng mới ra
+    - mới nhập về gì
+    - hàng mới nhập
+    - new arrivals
+    - new products
+    - mới nhất
+    - vừa ra mắt
+    - vừa về
+    - vừa nhập
+    - hàng mới 2024
+    - hàng mới 2025
+    - sản phẩm mới 2024
+    - sản phẩm mới 2025
+    - điện thoại mới nhất
+    - laptop mới nhất
+    - mỹ phẩm mới nhất
+    - thời trang mới nhất
+    - bộ sưu tập mới
+    - collection mới
+    - new collection
+    - latest products
+    - latest arrivals
+    - just arrived
+    - vừa ra
+    - mới ra
+    - mới nhất hiện tại
+    - cập nhật mới nhất
+    - hàng mới về hôm nay
+    - hàng mới về tuần này
+    - hàng mới về tháng này
+    - có gì mới ra không
+    - có sản phẩm nào mới không
+    - xem hàng mới
+    - cho xem hàng mới
+    - show hàng mới
+
+- intent: ask_authenticity
+  examples: |
+    - hàng chính hãng không
+    - có chính hãng không
+    - hàng thật không
+    - hàng fake không
+    - hàng nhái không
+    - hàng xịn không
+    - hàng auth không
+    - authentic không
+    - genuine không
+    - original không
+    - hàng chính hãng 100% không
+    - đảm bảo chính hãng không
+    - có tem chính hãng không
+    - có hóa đơn không
+    - có chứng từ không
+    - có giấy tờ không
+    - có bảo hành chính hãng không
+    - bảo hành hãng không
+    - bảo hành chính thức không
+    - official warranty
+    - hàng nhập khẩu chính ngạch không
+    - hàng xách tay không
+    - hàng nội địa không
+    - hàng VN không
+    - hàng Việt Nam không
+    - nguồn gốc hàng
+    - xuất xứ hàng
+    - made in đâu
+    - sản xuất ở đâu
+    - hàng Mỹ không
+    - hàng Nhật không
+    - hàng Hàn không
+    - hàng Trung không
+    - hàng EU không
+    - chứng nhận chính hãng
+    - certificate of authenticity
+    - có seal không
+    - còn seal không
+    - nguyên seal không
+    - fullbox không
+    - full box không
+    - nguyên hộp không
+    - còn hộp không
+
+- intent: ask_installment
+  examples: |
+    - trả góp được không
+    - có trả góp không
+    - mua trả góp
+    - trả góp 0% không
+    - trả góp lãi suất bao nhiêu
+    - trả góp mấy tháng
+    - trả góp 6 tháng
+    - trả góp 12 tháng
+    - trả góp 24 tháng
+    - trả góp 36 tháng
+    - điều kiện trả góp
+    - thủ tục trả góp
+    - hồ sơ trả góp
+    - trả góp qua thẻ tín dụng
+    - trả góp qua ngân hàng
+    - trả góp qua ví điện tử
+    - trả góp 0 đồng
+    - trả góp không lãi suất
+    - installment
+    - installment plan
+    - monthly payment
+    - trả hàng tháng
+    - trả từng tháng
+    - chia nhỏ thanh toán
+    - split payment
+    - mỗi tháng trả bao nhiêu
+    - tiền trả hàng tháng
+    - kỳ hạn trả góp
+    - số kỳ trả góp
+    - trả trước bao nhiêu
+    - down payment
+    - đặt cọc bao nhiêu
+    - cọc trước bao nhiêu
+    - trả góp ngân hàng nào
+    - ngân hàng hỗ trợ trả góp
+    - thẻ nào trả góp được
+    - visa trả góp được không
+    - mastercard trả góp được không
+    - jcb trả góp được không
+    - trả góp qua vpbank không
+    - trả góp qua techcombank không
+    - trả góp qua vietcombank không
+    - trả góp qua hdbank không
+    - trả góp qua shinhan không
+
+- intent: ask_flash_sale
+  examples: |
+    - flash sale không
+    - có flash sale không
+    - khi nào flash sale
+    - flash sale lúc mấy giờ
+    - flash sale hôm nay
+    - flash sale ngày mai
+    - flash sale cuối tuần
+    - deal hot
+    - deal ngày
+    - deal giờ
+    - deal hôm nay
+    - giảm giá sốc
+    - sale sốc
+    - giảm mạnh
+    - giảm sâu
+    - giảm 50%
+    - giảm 70%
+    - giảm 80%
+    - giảm đến 90%
+    - khuyến mãi sốc
+    - ưu đãi sốc
+    - giá sốc
+    - giá hủy diệt
+    - giá cực rẻ
+    - giá siêu rẻ
+    - giá không tưởng
+    - giá không thể tin được
+    - deal không thể bỏ qua
+    - deal cực hot
+    - deal cực ngon
+    - deal ngon
+    - hot deal
+    - best deal
+    - today deal
+    - daily deal
+    - limited time offer
+    - ưu đãi có hạn
+    - ưu đãi thời gian giới hạn
+    - sale có hạn
+    - sale giới hạn
+    - số lượng có hạn
+    - limited quantity
+    - mua ngay kẻo hết
+    - mua nhanh kẻo hết
+    - còn ít lắm
+    - sắp hết
+    - sắp hết giờ sale
+    - còn mấy tiếng nữa
+    - còn mấy phút nữa
+    - countdown sale
+    - đếm ngược sale
+
+- intent: ask_combo
+  examples: |
+    - có combo không
+    - mua combo được không
+    - combo giá bao nhiêu
+    - combo gồm những gì
+    - combo tiết kiệm
+    - combo ưu đãi
+    - mua kèm được không
+    - mua thêm được không
+    - mua cùng nhau
+    - bundle deal
+    - package deal
+    - set sản phẩm
+    - bộ sản phẩm
+    - mua bộ
+    - mua set
+    - combo điện thoại và ốp lưng
+    - combo điện thoại và tai nghe
+    - combo laptop và chuột
+    - combo laptop và bàn phím
+    - combo mỹ phẩm
+    - combo skincare
+    - combo chăm sóc da
+    - combo dưỡng da
+    - combo trang điểm
+    - combo thực phẩm
+    - combo đồ ăn
+    - combo đồ uống
+    - mua kèm phụ kiện
+    - phụ kiện đi kèm
+    - accessories bundle
+    - starter kit
+    - bộ khởi đầu
+    - bộ cơ bản
+    - bộ đầy đủ
+    - full set
+    - complete set
+    - mua thêm giảm thêm
+    - mua 2 giảm thêm
+    - mua 3 giảm thêm
+    - buy more save more
+    - mua nhiều giảm nhiều
+
+- intent: ask_size_guide
+  examples: |
+    - size bao nhiêu
+    - size chart
+    - bảng size
+    - hướng dẫn chọn size
+    - size nào phù hợp
+    - tôi mặc size gì
+    - size S là bao nhiêu
+    - size M là bao nhiêu
+    - size L là bao nhiêu
+    - size XL là bao nhiêu
+    - size XXL là bao nhiêu
+    - size 38 là gì
+    - size 39 là gì
+    - size 40 là gì
+    - size 41 là gì
+    - size 42 là gì
+    - size giày bao nhiêu
+    - size quần áo bao nhiêu
+    - size áo bao nhiêu
+    - size quần bao nhiêu
+    - size váy bao nhiêu
+    - tôi nặng 60kg mặc size gì
+    - tôi cao 1m65 mặc size gì
+    - size unisex không
+    - size oversize không
+    - size regular không
+    - size slim không
+    - size fit không
+    - size loose không
+    - size rộng không
+    - size ôm không
+    - chọn size như thế nào
+    - cách chọn size
+    - size guide
+    - sizing guide
+    - measurement guide
+    - hướng dẫn đo size
+    - cách đo size
+    - đo như thế nào
+    - số đo như thế nào
+    - vòng ngực bao nhiêu
+    - vòng eo bao nhiêu
+    - vòng hông bao nhiêu
+    - chiều cao bao nhiêu
+    - cân nặng bao nhiêu
+    - size có đúng không
+    - size có chuẩn không
+    - size có chính xác không
+    - size có vừa không
+    - có size lớn không
+    - có size nhỏ không
+    - có size plus không
+    - có size big không
+    - có size petite không
+
+- intent: ask_product_review
+  examples: |
+    - đánh giá sản phẩm này thế nào
+    - review sản phẩm này
+    - người dùng nói gì
+    - khách hàng đánh giá thế nào
+    - có review không
+    - có đánh giá không
+    - bao nhiêu sao
+    - mấy sao
+    - rating bao nhiêu
+    - điểm đánh giá
+    - review tốt không
+    - đánh giá tốt không
+    - có nhiều review không
+    - review thực tế
+    - review thật
+    - review khách hàng
+    - user review
+    - customer review
+    - feedback
+    - phản hồi khách hàng
+    - ý kiến khách hàng
+    - nhận xét khách hàng
+    - có ai dùng chưa
+    - ai dùng rồi nói sao
+    - dùng thực tế thế nào
+    - dùng có tốt không
+    - có đáng mua không
+    - có đáng tiền không
+    - worth it không
+    - có nên mua không
+    - mua có hối hận không
+    - mua có tiếc không
+    - chất lượng thực tế
+    - chất lượng có đúng như mô tả không
+    - có đúng như quảng cáo không
+    - có bị lừa không
+    - có tin tưởng được không
+    - sản phẩm có tốt không
+    - sản phẩm có bền không
+    - sản phẩm có đẹp không
+    - sản phẩm có xịn không
+    - sản phẩm có ngon không
+    - sản phẩm có ổn không
+    - sản phẩm có ok không
+    - sản phẩm có dùng được không
+    - sản phẩm có hài lòng không
+    - sản phẩm có recommend không
+    - có recommend không
+    - có giới thiệu không
+    - có nên mua không
+    - nên mua không
+    - mua không
+    - có mua không
+
+- intent: negotiate_price
+  examples: |
+    - giảm giá thêm được không
+    - bớt giá được không
+    - giảm thêm được không
+    - có thể giảm thêm không
+    - giảm cho tôi được không
+    - bớt cho tôi được không
+    - thương lượng giá được không
+    - mặc cả được không
+    - trả giá được không
+    - giá có fix không
+    - giá có thể thương lượng không
+    - giá có thể bớt không
+    - giá có thể giảm không
+    - giá cuối cùng là bao nhiêu
+    - giá tốt nhất là bao nhiêu
+    - giá thấp nhất là bao nhiêu
+    - giá rẻ nhất là bao nhiêu
+    - có thể cho giá tốt hơn không
+    - có thể cho giá rẻ hơn không
+    - giá có thể tốt hơn không
+    - giá có thể rẻ hơn không
+    - tôi mua nhiều giảm thêm không
+    - mua 2 cái giảm thêm không
+    - mua 3 cái giảm thêm không
+    - mua nhiều có giảm thêm không
+    - khách quen có giảm không
+    - khách thân thiết có giảm không
+    - loyal customer có ưu đãi không
+    - thành viên có giảm thêm không
+    - member có giảm thêm không
+    - giá cho thành viên
+    - giá cho khách quen
+    - giá đặc biệt
+    - giá ưu đãi đặc biệt
+    - giá tốt nhất cho tôi
+    - best price for me
+    - give me best price
+    - giá tốt nhất đi
+    - giảm đi
+    - bớt đi
+    - rẻ hơn đi
+    - giảm thêm chút đi
+    - bớt thêm chút đi
+    - giảm thêm một chút
+    - bớt thêm một chút
+    - giảm thêm tí
+    - bớt thêm tí
+    - giảm thêm nữa
+    - bớt thêm nữa

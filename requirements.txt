@@ -1,0 +1,14 @@
+# Rasa Framework
+rasa==3.6.0
+rasa-sdk==3.6.0
+
+# Database - SQLAlchemy ORM + Migrations
+sqlalchemy==2.0.23
+alembic==1.13.1
+mysql-connector-python==8.2.0
+
+# Environment Variables
+python-dotenv==1.0.0
+
+# Utilities
+requests==2.31.0
